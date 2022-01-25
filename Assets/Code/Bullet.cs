@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour {
 	public int damage = 50;
 
 	public float explosionRadius = 0f;
-	public GameObject impactEffect;
+	//public GameObject impactEffect;
 	
 	public void Seek (Transform _target)
 	{
@@ -41,8 +41,8 @@ public class Bullet : MonoBehaviour {
 
 	void HitTarget ()
 	{
-		GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-		Destroy(effectIns, 5f);
+		/*GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+		Destroy(effectIns, 5f);*/
 
 		if (explosionRadius > 0f)
 		{
