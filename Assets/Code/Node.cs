@@ -32,7 +32,7 @@ public class Node : MonoBehaviour {
 		return transform.position + positionOffset;
 	}
 
-	void OnMouseDown ()
+	/*void OnMouseDown ()
 	{
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
@@ -47,7 +47,7 @@ public class Node : MonoBehaviour {
 			return;
 
 		BuildTurret(buildManager.GetTurretToBuild());
-	}
+	}*/
 
 	void BuildTurret (TurretBlueprint blueprint)
 	{
@@ -64,8 +64,8 @@ public class Node : MonoBehaviour {
 
 		turretBlueprint = blueprint;
 
-		GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
-		Destroy(effect, 5f);
+		//GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+		//Destroy(effect, 5f);
 
 		Debug.Log("Turret build!");
 	}
@@ -87,8 +87,8 @@ public class Node : MonoBehaviour {
 		GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
 		turret = _turret;
 
-		GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
-		Destroy(effect, 5f);
+		//GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+		//Destroy(effect, 5f);
 
 		isUpgraded = true;
 
@@ -99,14 +99,14 @@ public class Node : MonoBehaviour {
 	{
 		PlayerStats.Money += turretBlueprint.GetSellAmount();
 
-		GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
-		Destroy(effect, 5f);
+		//GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
+		//Destroy(effect, 5f);
 
 		Destroy(turret);
 		turretBlueprint = null;
 	}
 
-	void OnMouseEnter ()
+	/*void OnMouseEnter ()
 	{
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
@@ -122,11 +122,11 @@ public class Node : MonoBehaviour {
 			rend.material.color = notEnoughMoneyColor;
 		}
 
-	}
+	}*/
 
-	void OnMouseExit ()
+	/*void OnMouseExit ()
 	{
 		rend.material.color = startColor;
-    }
+    }*/
 
 }
