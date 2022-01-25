@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour {
 
 	public static BuildManager instance;
 
-	void Awake ()
+	void Awake()
 	{
 		if (instance != null)
 		{
@@ -13,18 +14,25 @@ public class BuildManager : MonoBehaviour {
 		}
 		instance = this;
 	}
+    private void Update()
+    {
+		if (Input.GetMouseButtonDown(1))
+        {
+			turretToBuild = null;
+        }
 
-	/*public GameObject buildEffect;
+	}
+    /*public GameObject buildEffect;
 	public GameObject sellEffect;*/
 
-	[SerializeField] private TurretBlueprint turretToBuild;
-	[SerializeField] private TurretBlueprint allTurrets;
+    private TurretBlueprint turretToBuild = null;
+	[SerializeField] private TurretBlueprint[] allTurrets;
 	private Node selectedNode;
 
 	public bool CanBuild { get { return turretToBuild != null; } }
 	public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
 
-	public void SelectNode (Node node)
+	public void SelectNode(Node node)
 	{
 		if (selectedNode == node)
 		{
@@ -41,11 +49,16 @@ public class BuildManager : MonoBehaviour {
 		selectedNode = null;
 	}
 
-	public void SelectTurretToBuild (TurretBlueprint turret)
+	public void SelectTurretToBuild(TurretBlueprint turret)
 	{
 		turretToBuild = turret;
 		DeselectNode();
 	}
+	public void ChangeTurretOnClick(int index)
+    {
+		turretToBuild = allTurrets[index];
+    }
+
 	public void Test()
     {
 		Debug.Log("Test");
