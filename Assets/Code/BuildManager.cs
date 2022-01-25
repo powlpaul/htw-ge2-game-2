@@ -18,6 +18,7 @@ public class BuildManager : MonoBehaviour {
 	public GameObject sellEffect;*/
 
 	[SerializeField] private TurretBlueprint turretToBuild;
+	[SerializeField] private TurretBlueprint allTurrets;
 	private Node selectedNode;
 
 	public bool CanBuild { get { return turretToBuild != null; } }
@@ -45,7 +46,10 @@ public class BuildManager : MonoBehaviour {
 		turretToBuild = turret;
 		DeselectNode();
 	}
-
+	public void Test()
+    {
+		Debug.Log("Test");
+    }
 	public TurretBlueprint GetTurretToBuild ()
 	{
 		return turretToBuild;
