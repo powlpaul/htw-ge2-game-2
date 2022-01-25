@@ -32,7 +32,7 @@ public class Node : MonoBehaviour {
 		return transform.position + positionOffset;
 	}
 
-	/*void OnMouseDown ()
+	void OnMouseDown ()
 	{
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
@@ -47,7 +47,7 @@ public class Node : MonoBehaviour {
 			return;
 
 		BuildTurret(buildManager.GetTurretToBuild());
-	}*/
+	}
 
 	void BuildTurret (TurretBlueprint blueprint)
 	{
@@ -87,7 +87,7 @@ public class Node : MonoBehaviour {
 		GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
 		turret = _turret;
 
-		//GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+		//GameObject effect = (GameObject)Instantiate(buildManager, GetBuildPosition(), Quaternion.identity);
 		//Destroy(effect, 5f);
 
 		isUpgraded = true;
