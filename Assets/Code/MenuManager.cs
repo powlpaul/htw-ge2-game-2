@@ -8,6 +8,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text healthDisplay;
     [SerializeField] private Text moneyDisplay;
     [SerializeField] private Text RoundDisplay;
+
+    private int maxRounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,20 +21,21 @@ public class MenuManager : MonoBehaviour
         
     }
 
-    public void setup()
+    public void Setup(int maxRounds)
     {
-
+        this.maxRounds = maxRounds;
+        RoundDisplay.text = $"1/{maxRounds}";
     }
-    public void updateHealth(int newHealth)
+    public void UpdateHealth(int newHealth)
     {
-
+        healthDisplay.text = "" + newHealth;
     }
-    public void updateMoney(int newMoney)
+    public void UpdateMoney(int newMoney)
     {
-
+        moneyDisplay.text = "" + newMoney;
     }
-    public void nextRound()
+    public void NextRound(int roundNumber)
     {
-
+        RoundDisplay.text = $"{roundNumber}/{maxRounds}";
     }
 }

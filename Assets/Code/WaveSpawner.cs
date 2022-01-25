@@ -6,7 +6,7 @@ public class WaveSpawner : MonoBehaviour {
 
 	public static int EnemiesAlive = 0;
 
-	public Wave[] waves;
+	[SerializeField] private Wave[] waves;
 
 	public Transform spawnPoint;
 
@@ -18,8 +18,13 @@ public class WaveSpawner : MonoBehaviour {
 	public GameManager gameManager;
 
 	private int waveIndex = 0;
-
-	void Update ()
+    private void Start()
+    {
+		MenuManager menu = GameObject.Find("MenuCanvas").GetComponent<MenuManager>();
+		Debug.Log(waves.Length);
+		menu.Setup(waves.Length);
+	}
+    void Update ()
 	{
 		if (EnemiesAlive > 0)
 		{
