@@ -38,4 +38,10 @@ public class MenuManager : MonoBehaviour
     {
         RoundDisplay.text = $"{roundNumber}/{maxRounds}";
     }
+
+    public void ToggleGameSpeed()
+    {
+        if (Time.timeScale > 1.0) Time.timeScale = 1.0f;
+        else Time.timeScale = 3.0f;
+    }
 }
