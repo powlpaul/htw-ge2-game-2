@@ -14,43 +14,42 @@ public class WaveSpawner : MonoBehaviour {
 	private float countdown = 2f;
 
 	//public Text waveCountdownText;
-
+	private static bool isWave = false;
 	public GameManager gameManager;
 
 	private int waveIndex = 0;
     private void Start()
     {
 		MenuManager menu = GameObject.Find("MenuCanvas").GetComponent<MenuManager>();
-		Debug.Log(waves.Length);
 		menu.Setup(waves.Length);
 	}
     void Update ()
 	{
-		if (EnemiesAlive > 0)
-		{
-			return;
-		}
+	
 
 		if (waveIndex == waves.Length)
 		{
 			gameManager.WinLevel();
 			this.enabled = false;
 		}
-
-		if (countdown <= 0f)
+		if (EnemiesAlive == 0)
 		{
-			StartCoroutine(SpawnWave());
-			countdown = timeBetweenWaves;
+			isWave = false;
 			return;
 		}
-
-		countdown -= Time.deltaTime;
-
-		countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
-
-		//waveCountdownText.text = string.Format("{0:00.00}", countdown);
+	}
+	public void StartNextWave()
+    {
+		isWave = true;
+		Debug.Log("test");
+		StartCoroutine(SpawnWave());
+		
 	}
 
+	public static bool GetWaveState()
+    {
+		return isWave;
+    }
 	IEnumerator SpawnWave ()
 	{
 		PlayerStats.Rounds++;

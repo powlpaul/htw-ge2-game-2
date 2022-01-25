@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text healthDisplay;
     [SerializeField] private Text moneyDisplay;
     [SerializeField] private Text RoundDisplay;
-
+    [SerializeField] private Button nextRoundButton;
     private int maxRounds;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,8 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (WaveSpawner.GetWaveState()) nextRoundButton.interactable = false;
+        else nextRoundButton.interactable = true;
     }
 
     public void Setup(int maxRounds)
