@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour {
 
 	public int worth = 50;
 
-	public GameObject deathEffect;
+	//public GameObject deathEffect;
 
 	[Header("Unity Stuff")]
 	public Image healthBar;
