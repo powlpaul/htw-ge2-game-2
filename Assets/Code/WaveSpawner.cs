@@ -53,9 +53,14 @@ public class WaveSpawner : MonoBehaviour {
 			gameManager.WinLevel();
 			this.enabled = false;
 		}
-		if (EnemiesAlive == 0)
+		if (isWave && EnemiesAlive == 0)
 		{
 			isWave = false;
+			GameObject[] banks = GameObject.FindGameObjectsWithTag("Bank");
+			foreach(GameObject bank in banks)
+            {
+				bank.GetComponent<Bank>().TickUp();
+            }
 			return;
 		}
 	}

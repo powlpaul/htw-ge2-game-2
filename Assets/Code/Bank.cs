@@ -10,10 +10,10 @@ public class Bank : MonoBehaviour
     [SerializeField] private int interestPercent = 0;
     [SerializeField] private float tickTime = 0;
 
-    private float timePassed;
+    private float count;
     void Start()
     {
-
+        Initialize();
     }
     // Update is called once per frame
     void Update()
@@ -22,5 +22,21 @@ public class Bank : MonoBehaviour
         
 
         
+    }
+    public void Initialize()
+    {
+        count = 0;
+    }
+    public void TickUp()
+    {
+       
+        Debug.Log(count);
+        count = Mathf.Min(count + moneyPerTick + count * interestPercent / 100, maxMoney);
+        Debug.Log(count);
+    }
+
+    public void CashOut()
+    {
+
     }
 }
