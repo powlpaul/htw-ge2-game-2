@@ -11,15 +11,15 @@ public class Turret : MonoBehaviour {
 	public float range = 15f;
 
 	[Header("Use Bullets (default)")]
-	public GameObject bulletPrefab;
-	public float fireRate = 1f;
+	[SerializeField] private GameObject bulletPrefab;
+	[SerializeField] private float fireRate = 1f;
 	private float fireCountdown = 0f;
 
 	[Header("Use Laser")]
-	public bool useLaser = false;
+	[SerializeField] private bool useLaser = false;
 
-	public int damageOverTime = 30;
-	public float slowAmount = .5f;
+	[SerializeField] private int damageOverTime = 30;
+	[SerializeField] private float slowAmount = .5f;
 
 	public LineRenderer lineRenderer;
 	//public ParticleSystem impactEffect;
