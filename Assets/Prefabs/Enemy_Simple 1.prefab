@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 11483098}
   - component: {fileID: 114000011600303422}
   m_Layer: 0
-  m_Name: Enemy_Simple
+  m_Name: Enemy_Simple 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   speed: 10
-  startHealth: 100
-  worth: 20
+  startHealth: 200
+  worth: 30
   healthBar: {fileID: 114000010702059108}
 --- !u!114 &114000011600303422
 MonoBehaviour:

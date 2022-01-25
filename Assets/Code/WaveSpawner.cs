@@ -6,28 +6,49 @@ public class WaveSpawner : MonoBehaviour {
 
 	public static int EnemiesAlive = 0;
 
+	
 	[SerializeField] private Wave[] waves;
-
+	[SerializeField] private Wave[] waves2;
 	public Transform spawnPoint;
 
 	public float timeBetweenWaves = 5f;
 	private float countdown = 2f;
-
+	[Header("Wave Values")]
+	[SerializeField] int numOfWaves;
+	[SerializeField] Vector2 waveSizeMinMax;
+	[SerializeField] Vector2 waveRateMinMax;
+	[SerializeField] GameObject[] enemies;
 	//public Text waveCountdownText;
 	private static bool isWave = false;
 	public GameManager gameManager;
 
 	private int waveIndex = 0;
+
     private void Start()
     {
+		InitializeWave();
 		MenuManager menu = GameObject.Find("MenuCanvas").GetComponent<MenuManager>();
-		menu.Setup(waves.Length);
+		menu.Setup(waves2.Length);
 	}
+
+	private void InitializeWave()
+    {
+		waves2 = new Wave[numOfWaves];
+
+		for(int i = 0;i < numOfWaves; i++)
+        {
+			waves2[i] = new Wave(
+				enemies[0],
+				(int) Mathf.Lerp(waveSizeMinMax.x, waveSizeMinMax.y,(float) i / numOfWaves), 
+				Mathf.Lerp(waveRateMinMax.x, waveRateMinMax.y,(float) i / numOfWaves)
+			);
+        }
+    }
     void Update ()
 	{
 	
 
-		if (waveIndex == waves.Length)
+		if (waveIndex == waves2.Length)
 		{
 			gameManager.WinLevel();
 			this.enabled = false;
@@ -54,7 +75,7 @@ public class WaveSpawner : MonoBehaviour {
 	{
 		PlayerStats.Rounds++;
 
-		Wave wave = waves[waveIndex];
+		Wave wave = waves2[waveIndex];
 
 		EnemiesAlive = wave.count;
 
