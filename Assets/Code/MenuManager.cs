@@ -9,6 +9,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text moneyDisplay;
     [SerializeField] private Text RoundDisplay;
     [SerializeField] private Button nextRoundButton;
+    [Header("ShopMenu")]
+    [SerializeField] private GameObject buyMenu;
+    [Header("UpgradeMenu")]
+    [SerializeField] private GameObject upgradeMenu;
+    [SerializeField] private Text turretName;
     private int maxRounds;
     private Turret displayedTurret;
     // Start is called before the first frame update
@@ -48,7 +53,16 @@ public class MenuManager : MonoBehaviour
     }
     public void ShowTurretScreen(Turret tower)
     {
+        buyMenu.SetActive(false);
+        upgradeMenu.SetActive(true);
+        turretName.text = tower.GetTitle();
         Debug.Log(tower.range);
+        displayedTurret = tower;
+    }
+    public void HideTurretScreen()
+    {
+        buyMenu.SetActive(true);
+        upgradeMenu.SetActive(false);
     }
     public void OnUpgradePressed()
     {

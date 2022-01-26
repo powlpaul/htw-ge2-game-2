@@ -102,6 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485008}
   - component: {fileID: 11422402}
+  - component: {fileID: 9060365387028497556}
   m_Layer: 0
   m_Name: SniperTurm
   m_TagString: Untagged
@@ -137,24 +138,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0be04c0c5f4d4b85da0b947019937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: Sniper Bird
   range: 10000
   upgradePath:
-  - range: 0
-    damage: 0
-    attackSpeed: 0
+  - range: 40
+    damage: 50
+    attackSpeed: 0.5
     upgradeCost: 400
-  - range: 0
-    damage: 0
-    attackSpeed: 0
+  - range: 60
+    damage: 55
+    attackSpeed: 0.6
     upgradeCost: 500
-  - range: 0
-    damage: 0
-    attackSpeed: 0
-    upgradeCost: 800
-  - range: 0
-    damage: 0
-    attackSpeed: 0
-    upgradeCost: 800
+  - range: 60
+    damage: 55
+    attackSpeed: 0.7
+    upgradeCost: 1500
+  - range: 80
+    damage: 60
+    attackSpeed: 1
+    upgradeCost: 0
   bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
   fireRate: 0.5
   useLaser: 0
@@ -165,6 +167,20 @@ MonoBehaviour:
   partToRotate: {fileID: 454316}
   turnSpeed: 10
   firePoint: {fileID: 482280}
+--- !u!136 &9060365387028497556
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.65
+  m_Height: 2.6923811
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &4530098034399525492
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class Turret : MonoBehaviour {
 	[Header("Use Bullets (default)")]
 	[SerializeField] private GameObject bulletPrefab;
 	[SerializeField] private float fireRate = 1f;
+	[SerializeField] private int damage = 50;
 	private float fireCountdown = 0f;
 
 	[Header("Use Laser")]
@@ -38,6 +39,9 @@ public class Turret : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
+		this.range = upgradePath[currentLevel].range;
+		this.fireRate = upgradePath[currentLevel].attackSpeed;
+		this.damage = upgradePath[currentLevel].damage;
 	}
 	
 	void UpdateTarget ()
@@ -137,6 +141,7 @@ public class Turret : MonoBehaviour {
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
 
 		if (bullet != null)
+			bullet.damage = this.damage;
 			bullet.Seek(target);
 	}
 
@@ -151,6 +156,17 @@ public class Turret : MonoBehaviour {
     }
 	public void Upgrade()
     {
+		if (PlayerStats.Money - this.upgradePath[currentLevel].upgradeCost < 0 || this.upgradePath[currentLevel].upgradeCost == 0) return;
+		currentLevel++;
+		PlayerStats.Money -= this.upgradePath[currentLevel].upgradeCost;
+		this.range = upgradePath[currentLevel].range;
+		this.fireRate = upgradePath[currentLevel].attackSpeed;
+		this.damage = upgradePath[currentLevel].damage;
 
+	}
+
+	public string GetTitle()
+    {
+		return title;
     }
 }
