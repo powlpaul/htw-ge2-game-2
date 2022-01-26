@@ -11,9 +11,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button nextRoundButton;
     [Header("ShopMenu")]
     [SerializeField] private GameObject buyMenu;
-    [Header("UpgradeMenu")]
+    [Header("TurretMenu")]
     [SerializeField] private GameObject upgradeMenu;
     [SerializeField] private Text turretName;
+    [SerializeField] private Text upgradeCostDisplay;
+    [SerializeField] private Text SellAmountDisplay;
+    [SerializeField] private Text killCountDisplay;
     private int maxRounds;
     private Turret displayedTurret;
     // Start is called before the first frame update
@@ -55,9 +58,16 @@ public class MenuManager : MonoBehaviour
     {
         buyMenu.SetActive(false);
         upgradeMenu.SetActive(true);
-        turretName.text = tower.GetTitle();
-        Debug.Log(tower.range);
+     
         displayedTurret = tower;
+        UpdateTurretStatsInDisplay();
+    }
+    public void UpdateTurretStatsInDisplay()
+    {
+        turretName.text = displayedTurret.GetTitle() + " LVL " + (displayedTurret.GetCurrentLevel() + 1);
+        SellAmountDisplay.text = "" + displayedTurret.GetSellAmount() + "$";
+        upgradeCostDisplay.text = "" + displayedTurret.GetUpgradeAmount() + "$";
+        killCountDisplay.text = "0 Kills";
     }
     public void HideTurretScreen()
     {
@@ -67,6 +77,7 @@ public class MenuManager : MonoBehaviour
     public void OnUpgradePressed()
     {
         displayedTurret.Upgrade();
+        UpdateTurretStatsInDisplay();
     }
 
     public void EndGame()

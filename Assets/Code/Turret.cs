@@ -169,4 +169,21 @@ public class Turret : MonoBehaviour {
     {
 		return title;
     }
+	public int GetSellAmount()
+    {
+		int sellAmount = 600 / 2;
+		for(int i = 0; i < currentLevel; i++)
+        {
+			sellAmount += upgradePath[i].upgradeCost / 2;
+        }
+		return sellAmount;
+    }
+	public int GetUpgradeAmount()
+    {
+		return this.upgradePath[currentLevel].upgradeCost;
+	}
+	public int GetCurrentLevel()
+    {
+		return currentLevel;
+    }
 }
