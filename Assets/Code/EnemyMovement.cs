@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour {
 		enemy = GetComponent<Enemy>();
 
 		target = Waypoints.points[0];
+		transform.LookAt(target.position);
 	}
 
 	void Update()
@@ -24,6 +25,8 @@ public class EnemyMovement : MonoBehaviour {
 		if (Vector3.Distance(transform.position, target.position) <= 0.4f)
 		{
 			GetNextWaypoint();
+			
+			transform.LookAt(target.position);
 		}
 
 		enemy.speed = enemy.startSpeed;
