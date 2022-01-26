@@ -45,7 +45,10 @@ public class MenuManager : MonoBehaviour
         if (Time.timeScale > 1.0) Time.timeScale = 1.0f;
         else Time.timeScale = 3.0f;
     }
+    public void ShowTurretScreen(Turret tower)
+    {
 
+    }
     public void EndGame()
     {
         //TODO show another screen which reads "you lost'

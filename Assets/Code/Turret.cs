@@ -9,7 +9,8 @@ public class Turret : MonoBehaviour {
 	[Header("General")]
 
 	public float range = 15f;
-
+	[SerializeField] TurretStats[] upgradePath;
+	private int currentLevel = 0;
 	[Header("Use Bullets (default)")]
 	[SerializeField] private GameObject bulletPrefab;
 	[SerializeField] private float fireRate = 1f;
@@ -34,8 +35,8 @@ public class Turret : MonoBehaviour {
 
 	public Transform firePoint;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
 	}
 	
