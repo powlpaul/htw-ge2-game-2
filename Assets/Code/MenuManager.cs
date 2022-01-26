@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text RoundDisplay;
     [SerializeField] private Button nextRoundButton;
     private int maxRounds;
+    private Turret displayedTurret;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,11 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log(tower.range);
     }
+    public void OnUpgradePressed()
+    {
+        displayedTurret.Upgrade();
+    }
+
     public void EndGame()
     {
         //TODO show another screen which reads "you lost'

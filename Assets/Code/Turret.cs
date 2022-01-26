@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour {
 	private Enemy targetEnemy;
 
 	[Header("General")]
-
+	[SerializeField] string title;
 	public float range = 15f;
 	[SerializeField] TurretStats[] upgradePath;
 	private int currentLevel = 0;
