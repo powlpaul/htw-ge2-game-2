@@ -34,9 +34,14 @@ public class Bank : MonoBehaviour
         count = Mathf.Min(count + moneyPerTick + count * interestPercent / 100, maxMoney);
         Debug.Log(count);
     }
-
+    void OnMouseDown()
+    {
+        CashOut();
+    }
     public void CashOut()
     {
+        PlayerStats.Money += Mathf.RoundToInt(count);
+        count = 0;
 
     }
 }
