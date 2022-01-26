@@ -145,4 +145,12 @@ public class Turret : MonoBehaviour {
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, range);
 	}
+	void OnMouseDown()
+    {
+		GameObject.Find("MenuCanvas").GetComponent<MenuManager>().ShowTurretScreen(this);
+    }
+	public void Upgrade()
+    {
+
+    }
 }

@@ -10,6 +10,10 @@ public class TurretBlueprint {
 	public GameObject upgradedPrefab;
 	public int upgradeCost;
 
+	public void UpgradeTurret()
+    {
+		prefab.GetComponent<Turret>().Upgrade();
+    }
 	public int GetSellAmount ()
 	{
 		return cost / 2;

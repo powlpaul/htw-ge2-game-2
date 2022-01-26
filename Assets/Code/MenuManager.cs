@@ -47,7 +47,7 @@ public class MenuManager : MonoBehaviour
     }
     public void ShowTurretScreen(Turret tower)
     {
-
+        Debug.Log(tower.range);
     }
     public void EndGame()
     {
