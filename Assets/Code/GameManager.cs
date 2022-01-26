@@ -4,10 +4,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public static bool GameIsOver;
-
-	/*public GameObject gameOverUI;
-	public GameObject completeLevelUI;*/
-
+	public static MenuManager menuManager;
 	void Start ()
 	{
 		GameIsOver = false;
@@ -26,12 +23,14 @@ public class GameManager : MonoBehaviour {
 
 	void EndGame ()
 	{
+		menuManager.EndGame();
 		GameIsOver = true;
 		//gameOverUI.SetActive(true);
 	}
 
 	public void WinLevel ()
 	{
+		menuManager.WinGame();
 		GameIsOver = true;
 		//completeLevelUI.SetActive(true);
 	}
