@@ -7,7 +7,7 @@ public class Node : MonoBehaviour {
 	public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
 
-	[HideInInspector]
+
 	public GameObject turret;
 	[HideInInspector]
 	public TurretBlueprint turretBlueprint;
@@ -31,34 +31,58 @@ public class Node : MonoBehaviour {
 	{
 		return transform.position + positionOffset;
 	}
-
-	void OnMouseDown ()
+	
+    private void OnMouseEnter()
+    {
+		if (buildManager.GetTurretToBuild() == null || turret != null) return;
+		GameObject _turret = (GameObject)Instantiate(buildManager.GetTurretToBuild().prefab, GetBuildPosition(), Quaternion.identity);
+		turret = _turret;
+		turret.GetComponent<Turret>().enabled = false;
+		turret.GetComponent<CapsuleCollider>().enabled = false;
+	}
+    private void OnMouseExit()
+    {
+		if ((turret == null) || (turret != null && turret.GetComponent<Turret>().enabled == true)) return;
+		turret.GetComponent<Turret>().Destroy();
+		turret = null;
+    }
+	
+    void OnMouseDown ()
 	{
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
-
-		if (turret != null)
+		// && turret.GetComponent<Turret>().isActiveAndEnabled == true
+		if (!buildManager.CanBuild)
+			return;
+		if (turret != null && turret.GetComponent<Turret>().enabled)
 		{
 			buildManager.SelectNode(this);
 			return;
 		}
-
-		if (!buildManager.CanBuild)
-			return;
-
 		BuildTurret(buildManager.GetTurretToBuild());
 	}
 
 	void BuildTurret (TurretBlueprint blueprint)
 	{
+	
+		
 		if (PlayerStats.Money < blueprint.cost)
 		{
 			Debug.Log("Not enough money to build that!");
 			return;
 		}
-
+		turret.GetComponent<Turret>().Destroy();
 		PlayerStats.Money -= blueprint.cost;
+		/*
+		if (turret.GetComponent<Turret>().enabled == false)
+        {
+			turret.GetComponent<Turret>().enabled = true;
+			turret.GetComponent<CapsuleCollider>().enabled = true;
+			//Debug.LogError("turret");
+			return;
 
+		}
+		*/
 		GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
 		turret = _turret;
 

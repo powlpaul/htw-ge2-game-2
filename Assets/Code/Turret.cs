@@ -186,4 +186,10 @@ public class Turret : MonoBehaviour {
     {
 		return currentLevel;
     }
+
+
+    public void Destroy()
+    {
+		Destroy(gameObject);
+    }
 }
