@@ -44,4 +44,9 @@ public class Bank : MonoBehaviour
         count = 0;
 
     }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }
