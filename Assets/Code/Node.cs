@@ -37,13 +37,22 @@ public class Node : MonoBehaviour {
 		if (buildManager.GetTurretToBuild() == null || turret != null) return;
 		GameObject _turret = (GameObject)Instantiate(buildManager.GetTurretToBuild().prefab, GetBuildPosition(), Quaternion.identity);
 		turret = _turret;
-		turret.GetComponent<Turret>().enabled = false;
-		turret.GetComponent<CapsuleCollider>().enabled = false;
+		if (turret.tag == "Bank")
+		{
+			turret.GetComponent<Bank>().enabled = false;
+			turret.GetComponent<BoxCollider>().enabled = false;
+
+		} else {
+			turret.GetComponent<Turret>().enabled = false;
+			turret.GetComponent<CapsuleCollider>().enabled = false;
+		}
 	}
     private void OnMouseExit()
     {
-		if ((turret == null) || (turret != null && turret.GetComponent<Turret>().enabled == true)) return;
-		turret.GetComponent<Turret>().Destroy();
+
+		if ((turret == null) || ((turret != null && turret.tag == "Bank" && turret.GetComponent<Bank>().enabled == true)) || (turret != null && turret.tag == "Tower" && turret.GetComponent<Turret>().enabled == true)) return;
+		if(turret.tag == "Bank") turret.GetComponent<Bank>().Destroy();
+		else turret.GetComponent<Turret>().Destroy();
 		turret = null;
     }
 	
@@ -54,7 +63,7 @@ public class Node : MonoBehaviour {
 		// && turret.GetComponent<Turret>().isActiveAndEnabled == true
 		if (!buildManager.CanBuild)
 			return;
-		if (turret != null && turret.GetComponent<Turret>().enabled)
+		if (turret != null && ((turret.tag == "Turret" && turret.GetComponent<Turret>().enabled) || (turret.tag == "Bank" && turret.GetComponent<Bank>().enabled )))
 		{
 			buildManager.SelectNode(this);
 			return;
@@ -71,7 +80,8 @@ public class Node : MonoBehaviour {
 			Debug.Log("Not enough money to build that!");
 			return;
 		}
-		turret.GetComponent<Turret>().Destroy();
+		if(turret.tag == "Tower") turret.GetComponent<Turret>().Destroy();
+		if (turret.tag == "Bank") turret.GetComponent<Bank>().Destroy();
 		PlayerStats.Money -= blueprint.cost;
 		/*
 		if (turret.GetComponent<Turret>().enabled == false)
