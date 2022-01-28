@@ -8,14 +8,20 @@ public class Bullet : MonoBehaviour {
 
 	public int damage = 50;
 
+	private int bounceAmount = 0;
 	public float explosionRadius = 0f;
 	//public GameObject impactEffect;
 	
 	public void Seek (Transform _target)
 	{
 		target = _target;
+		bounceAmount = 0;
 	}
-
+	public void Seek (Transform _target, int bounceAmount)
+    {
+		target = _target;
+		this.bounceAmount = bounceAmount;
+    }
 	// Update is called once per frame
 	void Update () {
 
@@ -31,6 +37,7 @@ public class Bullet : MonoBehaviour {
 		if (dir.magnitude <= distanceThisFrame)
 		{
 			HitTarget();
+			UpdateTarget();
 			return;
 		}
 
@@ -38,7 +45,34 @@ public class Bullet : MonoBehaviour {
 		transform.LookAt(target);
 
 	}
+	void UpdateTarget()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		float shortestDistance = Mathf.Infinity;
+		GameObject nearestEnemy = null;
+		float distanceToCurrentTarget = Vector3.Distance(transform.position, target.position);
+		Debug.LogError(distanceToCurrentTarget);
+		foreach (GameObject enemy in enemies)
+		{
+			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+			if (distanceToEnemy < shortestDistance && distanceToEnemy > distanceToCurrentTarget)
+			{
+				shortestDistance = distanceToEnemy;
+				nearestEnemy = enemy;
+			}
+		}
 
+		if (nearestEnemy != null && shortestDistance <= 10)
+		{
+			target = nearestEnemy.transform;
+			//targetEnemy = nearestEnemy.GetComponent<Enemy>();
+		}
+		else
+		{
+			target = null;
+		}
+
+	}
 	void HitTarget ()
 	{
 		/*GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
@@ -52,7 +86,7 @@ public class Bullet : MonoBehaviour {
 			Damage(target);
 		}
 
-		Destroy(gameObject);
+		if(bounceAmount == 0) Destroy(gameObject);
 	}
 
 	void Explode ()
