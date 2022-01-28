@@ -23,6 +23,10 @@ public class Bank : MonoBehaviour
 
         
     }
+    public void OnMouseDown()
+    {
+        GameObject.Find("MenuCanvas").GetComponent<MenuManager>().ShowBankScreen(this);
+    }
     public void Initialize()
     {
         count = 0;
@@ -34,9 +38,17 @@ public class Bank : MonoBehaviour
         count = Mathf.Min(count + moneyPerTick + count * interestPercent / 100, maxMoney);
         Debug.Log(count);
     }
-    void OnMouseDown()
+    public int GetSellAmount()
     {
-        CashOut();
+        return 400 + (int) count;
+    }
+    public int GetCount()
+    {
+        return (int)count;
+    }
+    public void Sell()
+    {
+        PlayerStats.Money += 400 + (int)count;
     }
     public void CashOut()
     {

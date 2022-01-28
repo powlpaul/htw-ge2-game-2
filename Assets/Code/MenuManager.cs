@@ -17,8 +17,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text upgradeCostDisplay;
     [SerializeField] private Text SellAmountDisplay;
     [SerializeField] private Text killCountDisplay;
+    [Header("BankMenu")]
+    [SerializeField] private GameObject bankMenu;
+    [SerializeField] private Text bankName;
+    [SerializeField] private Text bankUpgradeCostDisplay;
+    [SerializeField] private Text bankSellAmountDisplay;
+    [SerializeField] private Text bankMoneyDisplay;
     private int maxRounds;
     private Turret displayedTurret;
+    private Bank displayedBank;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,10 +64,24 @@ public class MenuManager : MonoBehaviour
     public void ShowTurretScreen(Turret tower)
     {
         buyMenu.SetActive(false);
+        bankMenu.SetActive(false);
         upgradeMenu.SetActive(true);
      
         displayedTurret = tower;
+        displayedBank = null;
         UpdateTurretStatsInDisplay();
+    }
+    public void ShowBankScreen(Bank bank)
+    {
+        buyMenu.SetActive(false);
+        upgradeMenu.SetActive(false);
+        bankMenu.SetActive(true);
+
+        displayedBank = bank;
+        displayedTurret = null;
+        UpdateBankStatsInDisplay();
+
+
     }
     public void UpdateTurretStatsInDisplay()
     {
@@ -69,17 +90,30 @@ public class MenuManager : MonoBehaviour
         upgradeCostDisplay.text = "" + displayedTurret.GetUpgradeAmount() + "$";
         killCountDisplay.text = "0 Kills";
     }
+    public void UpdateBankStatsInDisplay()
+    {
+        bankName.text = "Bank" + "LVL 1";
+        bankSellAmountDisplay.text = displayedBank.GetSellAmount() + "$";
+        bankUpgradeCostDisplay.text = "1000$";
+        bankMoneyDisplay.text = displayedBank.GetCount() + "$";
+
+
+    }
     public void HideTurretScreen()
     {
         buyMenu.SetActive(true);
         upgradeMenu.SetActive(false);
+        bankMenu.SetActive(false);
     }
     public void OnUpgradePressed()
     {
         displayedTurret.Upgrade();
         UpdateTurretStatsInDisplay();
     }
-
+    public void OnCashOutPressed()
+    {
+        displayedBank.CashOut();
+    }
     public void EndGame()
     {
         //TODO show another screen which reads "you lost'
