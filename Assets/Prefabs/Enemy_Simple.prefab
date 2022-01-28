@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 13568006}
   - component: {fileID: 11483098}
   - component: {fileID: 114000011600303422}
+  - component: {fileID: 5770608135439530639}
   m_Layer: 0
   m_Name: Enemy_Simple
   m_TagString: Enemy
@@ -77,6 +78,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20507e2bb7e90f4d92a4d3c6d007ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &5770608135439530639
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146912}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1000010410862480
 GameObject:
   m_ObjectHideFlags: 0

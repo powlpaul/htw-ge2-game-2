@@ -153,7 +153,7 @@ MonoBehaviour:
     damage: 100
     attackSpeed: 1.5
     upgradeCost: 0
-  bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
+  bulletPrefab: {fileID: 185070, guid: 6b6b484f5033d8e408f678c51049de39, type: 3}
   fireRate: 1
   damage: 50
   useLaser: 0

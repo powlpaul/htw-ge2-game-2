@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
 	[SerializeField] private Transform target;
-
+	[SerializeField] private GameObject slowZone;
 	public float speed = 70f;
 
 	public int damage = 50;
@@ -88,7 +88,7 @@ public class Bullet : MonoBehaviour {
 		{
 			Damage(target);
 		}
-
+		if (slowZone != null) Instantiate(slowZone, transform.position, Quaternion.identity);
 		if(bounceAmount == 0) Destroy(gameObject);
 	}
 

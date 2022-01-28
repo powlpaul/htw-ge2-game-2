@@ -37,8 +37,16 @@ public class Enemy : MonoBehaviour {
 			Die();
 		}
 	}
-
-	public void Slow (float pct)
+	public void OnTriggerEnter(Collider other)
+	{
+		if (other.tag != "SlowZone") return;
+		speed = startSpeed / 2;
+	}
+    public void OnTriggerExit(Collider other)
+    {
+		speed = startSpeed;
+    }
+    public void Slow (float pct)
 	{
 		speed = startSpeed * (1f - pct);
 	}
