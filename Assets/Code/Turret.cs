@@ -142,7 +142,8 @@ public class Turret : MonoBehaviour {
 
 		if (bullet != null)
 			bullet.damage = this.damage;
-			bullet.Seek(target);
+		if (title == "Boomerang Bird") bullet.Seek(target, 1);
+		else bullet.Seek(target);
 	}
 
 	void OnDrawGizmosSelected ()

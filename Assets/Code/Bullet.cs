@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	private Transform target;
+	[SerializeField] private Transform target;
 
 	public float speed = 70f;
 
 	public int damage = 50;
 
-	private int bounceAmount = 0;
+	[SerializeField] private int bounceAmount = 0;
 	public float explosionRadius = 0f;
 	//public GameObject impactEffect;
 	
@@ -51,11 +51,11 @@ public class Bullet : MonoBehaviour {
 		float shortestDistance = Mathf.Infinity;
 		GameObject nearestEnemy = null;
 		float distanceToCurrentTarget = Vector3.Distance(transform.position, target.position);
-		Debug.LogError(distanceToCurrentTarget);
+		
 		foreach (GameObject enemy in enemies)
 		{
 			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-			if (distanceToEnemy < shortestDistance && distanceToEnemy > distanceToCurrentTarget)
+			if (distanceToEnemy < shortestDistance && distanceToEnemy > distanceToCurrentTarget + 0.25f)
 			{
 				shortestDistance = distanceToEnemy;
 				nearestEnemy = enemy;
@@ -64,7 +64,10 @@ public class Bullet : MonoBehaviour {
 
 		if (nearestEnemy != null && shortestDistance <= 10)
 		{
+
 			target = nearestEnemy.transform;
+			//Debug.LogError(target.position.x + " " + target.position.y);
+			bounceAmount--;
 			//targetEnemy = nearestEnemy.GetComponent<Enemy>();
 		}
 		else
