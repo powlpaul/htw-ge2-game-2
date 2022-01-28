@@ -4357,7 +4357,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 400$
+  m_Text: 900$
 --- !u!1 &7632639898709378504
 GameObject:
   m_ObjectHideFlags: 0

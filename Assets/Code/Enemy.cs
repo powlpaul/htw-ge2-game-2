@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour {
 	public int worth = 50;
 
 	//public GameObject deathEffect;
+	private float slowTimer = 0;
 
 	[Header("Unity Stuff")]
 	public Image healthBar;
@@ -25,8 +26,12 @@ public class Enemy : MonoBehaviour {
 		speed = startSpeed;
 		health = startHealth;
 	}
-
-	public void TakeDamage (float amount)
+    private void Update()
+    {
+		slowTimer += Time.deltaTime;
+		if (slowTimer > 1) speed = startSpeed;
+    }
+    public void TakeDamage (float amount)
 	{
 		health -= amount;
 
@@ -42,9 +47,13 @@ public class Enemy : MonoBehaviour {
 		if (other.tag != "SlowZone") return;
 		speed = startSpeed / 2;
 	}
+    public void OnTriggerStay(Collider other)
+    {
+		slowTimer = 0;
+    }
     public void OnTriggerExit(Collider other)
     {
-		speed = startSpeed;
+		slowTimer = 0;
     }
     public void Slow (float pct)
 	{
