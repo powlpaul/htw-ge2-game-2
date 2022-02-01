@@ -17,11 +17,7 @@ public class Turret : MonoBehaviour {
 	[SerializeField] private int damage = 50;
 	private float fireCountdown = 0f;
 
-	[Header("Use Laser")]
-	[SerializeField] private bool useLaser = false;
 
-	[SerializeField] private int damageOverTime = 30;
-	[SerializeField] private float slowAmount = .5f;
 
 	public LineRenderer lineRenderer;
 	//public ParticleSystem impactEffect;
@@ -74,34 +70,20 @@ public class Turret : MonoBehaviour {
 	void Update () {
 		if (target == null)
 		{
-			if (useLaser)
-			{
-				if (lineRenderer.enabled)
-				{
-					lineRenderer.enabled = false;
-					//impactEffect.Stop();
-					//impactLight.enabled = false;
-				}
-			}
-
 			return;
 		}
 
 		LockOnTarget();
 
-		if (useLaser)
+	 
+		if (fireCountdown <= 0f)
 		{
-			Laser();
-		} else
-		{
-			if (fireCountdown <= 0f)
-			{
-				Shoot();
-				fireCountdown = 1f / fireRate;
-			}
-
-			fireCountdown -= Time.deltaTime;
+			Shoot();
+			fireCountdown = 1f / fireRate;
 		}
+
+		fireCountdown -= Time.deltaTime;
+		
 
 	}
 
@@ -113,28 +95,6 @@ public class Turret : MonoBehaviour {
 		partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 	}
 
-	void Laser ()
-	{
-		targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
-		targetEnemy.Slow(slowAmount);
-
-		if (!lineRenderer.enabled)
-		{
-			lineRenderer.enabled = true;
-			//impactEffect.Play();
-			//impactLight.enabled = true;
-		}
-
-		lineRenderer.SetPosition(0, firePoint.position);
-		lineRenderer.SetPosition(1, target.position);
-
-		Vector3 dir = firePoint.position - target.position;
-
-		//impactEffect.transform.position = target.position + dir.normalized;
-
-		//impactEffect.transform.rotation = Quaternion.LookRotation(dir);
-	}
-
 	void Shoot ()
 	{
 		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -142,7 +102,7 @@ public class Turret : MonoBehaviour {
 
 		if (bullet != null)
 			bullet.damage = this.damage;
-		if (title == "Boomerang Bird") bullet.Seek(target, 1);
+		if (title == "Boomerang Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
 		else bullet.Seek(target);
 	}
 

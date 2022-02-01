@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6245465673186905779}
   - component: {fileID: 6245465673186905778}
   - component: {fileID: 1833814307}
+  - component: {fileID: 2583043161337490980}
   m_Layer: 0
   m_Name: SlowZone
   m_TagString: SlowZone
@@ -67,3 +68,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowTime: 2
+--- !u!54 &2583043161337490980
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6245465673186905741}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

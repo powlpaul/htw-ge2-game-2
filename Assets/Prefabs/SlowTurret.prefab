@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0be04c0c5f4d4b85da0b947019937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Attack Bird
+  title: Wizard Bird
   range: 15
   upgradePath:
   - range: 15
