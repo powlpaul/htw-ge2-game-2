@@ -8,7 +8,7 @@ public class TurretStats
 	public int damage;
 	public float attackSpeed;
 	public float slowAmount;
-	public int slowTime;
+	public float slowTime;
 	public int bounceAmount;
 	public int upgradeCost;
 	public TurretStats(int range, int damage, int attackSpeed, int upgradeCost)
