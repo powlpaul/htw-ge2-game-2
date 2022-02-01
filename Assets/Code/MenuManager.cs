@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button nextRoundButton;
     [Header("ShopMenu")]
     [SerializeField] private GameObject buyMenu;
+    [SerializeField] private Text[] birdPrices;
     [Header("TurretMenu")]
     [SerializeField] private GameObject upgradeMenu;
     [SerializeField] private Text turretName;
@@ -29,6 +30,11 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BuildManager buildManager = GameObject.Find("GameMaster").GetComponent<BuildManager>();
+        for (int i = 0; i < birdPrices.Length; i++)
+        {
+            birdPrices[i].text = buildManager.GetTurretCost(i) + "$";
+        }
     }
 
     // Update is called once per frame

@@ -58,6 +58,10 @@ public class BuildManager : MonoBehaviour {
     {
 		turretToBuild = allTurrets[index];
     }
+	public int GetTurretCost(int index)
+    {
+		return allTurrets[index].cost;
+    }
 
 	public void Test()
     {
