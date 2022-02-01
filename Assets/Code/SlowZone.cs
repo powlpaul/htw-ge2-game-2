@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlowZone : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private float zoneDuration;
+    public float zoneDuration;
     public float slowAmount;
     public float slowDuration;
 

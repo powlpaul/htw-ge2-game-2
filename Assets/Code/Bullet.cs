@@ -92,7 +92,11 @@ public class Bullet : MonoBehaviour {
 		if (slowZone != null) { 
 			GameObject slowZoneGO = Instantiate(slowZone, transform.position, Quaternion.identity);
 			SlowZone slowZoneScript = slowZoneGO.GetComponent<SlowZone>();
-			//slowZoneScript.slowDuration = parent.
+			TurretStats turretStats = parent.GetCurrentLevelStats();
+
+			slowZoneScript.slowDuration = turretStats.slowTime;
+			slowZoneScript.slowAmount = turretStats.slowAmount;
+			slowZoneScript.zoneDuration = turretStats.slowZoneDuration;
 		}
 		if(bounceAmount == 0) Destroy(gameObject);
 	}
