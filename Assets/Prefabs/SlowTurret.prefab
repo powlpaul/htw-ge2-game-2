@@ -151,15 +151,15 @@ MonoBehaviour:
     upgradeCost: 500
   - range: 10
     damage: 70
-    attackSpeed: 1.1
+    attackSpeed: 1.5
     slowAmount: 0.4
     slowTime: 1.5
     slowZoneDuration: 1.5
     bounceAmount: 0
-    upgradeCost: 600
+    upgradeCost: 850
   - range: 15
     damage: 100
-    attackSpeed: 0.7
+    attackSpeed: 2
     slowAmount: 0.3
     slowTime: 2
     slowZoneDuration: 2

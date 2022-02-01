@@ -118,8 +118,8 @@ public class Turret : MonoBehaviour {
 	public void Upgrade()
     {
 		if (PlayerStats.Money - this.upgradePath[currentLevel].upgradeCost < 0 || this.upgradePath[currentLevel].upgradeCost == 0) return;
-		currentLevel++;
 		PlayerStats.Money -= this.upgradePath[currentLevel].upgradeCost;
+		currentLevel++;
 		this.range = upgradePath[currentLevel].range;
 		this.fireRate = upgradePath[currentLevel].attackSpeed;
 		this.damage = upgradePath[currentLevel].damage;

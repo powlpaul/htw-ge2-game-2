@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
+/*
+ * This class is mainly a value holder. hence it does not inherint from MonoBehaviour .
+ * all stats are serializalbe in the editor and are used in an array to represent the upgrade path of a given turret
+ * 
+ */
 public class TurretStats
 {
 
