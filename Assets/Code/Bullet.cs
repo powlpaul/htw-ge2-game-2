@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour {
 
 	[SerializeField] private Transform target;
 	[SerializeField] private GameObject slowZone;
+	private Turret parent;
 	public float speed = 70f;
 
 	public int damage = 50;
@@ -88,7 +89,11 @@ public class Bullet : MonoBehaviour {
 		{
 			Damage(target);
 		}
-		if (slowZone != null) Instantiate(slowZone, transform.position, Quaternion.identity);
+		if (slowZone != null) { 
+			GameObject slowZoneGO = Instantiate(slowZone, transform.position, Quaternion.identity);
+			SlowZone slowZoneScript = slowZoneGO.GetComponent<SlowZone>();
+			//slowZoneScript.slowDuration = parent.
+		}
 		if(bounceAmount == 0) Destroy(gameObject);
 	}
 
@@ -111,6 +116,7 @@ public class Bullet : MonoBehaviour {
 		if (e != null)
 		{
 			e.TakeDamage(damage);
+			if (e.getIsDead()) parent.IncrementKillCount();
 		}
 	}
 
@@ -119,4 +125,9 @@ public class Bullet : MonoBehaviour {
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, explosionRadius);
 	}
+
+	public void SetParent(Turret parent)
+    {
+		this.parent = parent;
+    }
 }

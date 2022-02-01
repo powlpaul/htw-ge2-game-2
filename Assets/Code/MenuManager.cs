@@ -94,7 +94,7 @@ public class MenuManager : MonoBehaviour
         turretName.text = displayedTurret.GetTitle() + " LVL " + (displayedTurret.GetCurrentLevel() + 1);
         SellAmountDisplay.text = "" + displayedTurret.GetSellAmount() + "$";
         upgradeCostDisplay.text = "" + displayedTurret.GetUpgradeAmount() + "$";
-        killCountDisplay.text = "0 Kills";
+        killCountDisplay.text =  displayedTurret.GetKillCount() + "Kills";
     }
     public void UpdateBankStatsInDisplay()
     {

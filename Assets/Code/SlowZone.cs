@@ -5,7 +5,9 @@ using UnityEngine;
 public class SlowZone : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private float slowTime;
+    [SerializeField] private float zoneDuration;
+    public float slowAmount;
+    public float slowDuration;
 
     private float timePassed =0;
     void Start()
@@ -17,6 +19,6 @@ public class SlowZone : MonoBehaviour
     void Update()
     {
         timePassed += Time.deltaTime;
-        if (timePassed > slowTime) Destroy(gameObject);
+        if (timePassed > zoneDuration) Destroy(gameObject);
     }
 }

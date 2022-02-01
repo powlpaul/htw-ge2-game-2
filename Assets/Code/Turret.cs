@@ -17,7 +17,7 @@ public class Turret : MonoBehaviour {
 	[SerializeField] private int damage = 50;
 	private float fireCountdown = 0f;
 
-
+	private int killCount = 0;
 
 	public LineRenderer lineRenderer;
 	//public ParticleSystem impactEffect;
@@ -99,7 +99,7 @@ public class Turret : MonoBehaviour {
 	{
 		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
-
+		bullet.SetParent(this);
 		if (bullet != null)
 			bullet.damage = this.damage;
 		if (title == "Boomerang Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
@@ -152,5 +152,18 @@ public class Turret : MonoBehaviour {
     public void Destroy()
     {
 		Destroy(gameObject);
+    }
+	public void IncrementKillCount()
+    {
+		killCount++;
+    }
+
+	public int GetKillCount()
+    {
+		return killCount;
+    }
+	public TurretStats GetCurrentLevelStats()
+    {
+		return upgradePath[currentLevel];
     }
 }
