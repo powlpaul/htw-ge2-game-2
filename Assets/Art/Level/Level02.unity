@@ -465,8 +465,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &174846119
 PrefabInstance:
@@ -683,16 +681,10 @@ MonoBehaviour:
   allTurrets:
   - prefab: {fileID: 174700, guid: 64f2ae8c83ee6bb49a47a2d3f43d307e, type: 3}
     cost: 600
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 1000
   - prefab: {fileID: 174700, guid: 705f54c730eeebe4a84dc02d60fe291f, type: 3}
     cost: 900
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 1000
   - prefab: {fileID: 2370100103730205078, guid: 503dd5f49fcb3d84cb0460b5c6b9ff5e, type: 3}
     cost: 400
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 1000
 --- !u!114 &196616390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,8 +1332,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &315706917
 GameObject:
@@ -1504,8 +1494,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &338889620
 PrefabInstance:
@@ -1589,8 +1577,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &339358709
 GameObject:
@@ -2047,8 +2033,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &480978215
 PrefabInstance:
@@ -2132,8 +2116,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &530883208
 GameObject:
@@ -2351,8 +2333,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &557768344
 GameObject:
@@ -2391,11 +2371,17 @@ MonoBehaviour:
   RoundDisplay: {fileID: 1220831555}
   nextRoundButton: {fileID: 1579922230}
   buyMenu: {fileID: 999416274}
+  birdPrices: []
   upgradeMenu: {fileID: 1783268226}
   turretName: {fileID: 1447810154}
   upgradeCostDisplay: {fileID: 599752645}
   SellAmountDisplay: {fileID: 1485377001}
   killCountDisplay: {fileID: 236877572}
+  bankMenu: {fileID: 0}
+  bankName: {fileID: 0}
+  bankUpgradeCostDisplay: {fileID: 0}
+  bankSellAmountDisplay: {fileID: 0}
+  bankMoneyDisplay: {fileID: 0}
 --- !u!114 &557768346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2692,8 +2678,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &670848285
 GameObject:
@@ -2923,8 +2907,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &701575250
 PrefabInstance:
@@ -3137,8 +3119,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &791430312
 PrefabInstance:
@@ -3222,8 +3202,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &866143233
 PrefabInstance:
@@ -3307,8 +3285,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &891340063
 PrefabInstance:
@@ -3392,8 +3368,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &930311476
 PrefabInstance:
@@ -3477,8 +3451,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &946899591
 PrefabInstance:
@@ -3562,8 +3534,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &978891844
 GameObject:
@@ -3930,8 +3900,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1059672071
 PrefabInstance:
@@ -4015,8 +3983,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1076282453
 GameObject:
@@ -4196,8 +4162,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1109286394
 PrefabInstance:
@@ -4281,8 +4245,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1121011981
 PrefabInstance:
@@ -4366,8 +4328,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1122793715
 PrefabInstance:
@@ -5319,8 +5279,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1485376999
 GameObject:
@@ -5485,8 +5443,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1519531137
 GameObject:
@@ -5666,8 +5622,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1556705045
 GameObject:
@@ -5982,8 +5936,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1582312329
 PrefabInstance:
@@ -6067,8 +6019,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1603685047
 PrefabInstance:
@@ -6152,8 +6102,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1611037751
 GameObject:
@@ -6382,8 +6330,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1652122673
 PrefabInstance:
@@ -6517,8 +6463,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1696958557
 GameObject:
@@ -6674,8 +6618,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1730785860
 PrefabInstance:
@@ -6809,8 +6751,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1783268226
 GameObject:
@@ -6976,8 +6916,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1819147853
 GameObject:
@@ -7146,7 +7084,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851721805}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7284,8 +7222,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &1902115400
 GameObject:
@@ -7448,8 +7384,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1943614523
 PrefabInstance:
@@ -7533,8 +7467,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &1954373461
 PrefabInstance:
@@ -7668,8 +7600,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1 &2010733465
 GameObject:
@@ -7832,8 +7762,6 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
 --- !u!1001 &2083584909
 PrefabInstance:
@@ -7917,9 +7845,76 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
+--- !u!1001 &2092694842
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.60455424
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.60455424
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.60455424
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 79.34
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -63.02
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.4895629
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.87196803
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -121.376
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
+      propertyPath: m_Name
+      value: Birbhouse
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3a5a4bee76fa4241b577a258c19666e, type: 3}
 --- !u!1 &2093475342
 GameObject:
   m_ObjectHideFlags: 0
@@ -8083,6 +8078,4 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
   isUpgraded: 0
