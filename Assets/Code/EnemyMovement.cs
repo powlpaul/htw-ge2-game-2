@@ -55,6 +55,10 @@ public class EnemyMovement : MonoBehaviour {
 	public void SetTarget(Transform newTarget)
     {
 		target = newTarget;
+		for(int i = 0; i < Waypoints.points.Length; i++)
+        {
+			if (Waypoints.points[i] == newTarget) wavepointIndex = i;
+        }
     }
 
 	public Transform GetTarget()
