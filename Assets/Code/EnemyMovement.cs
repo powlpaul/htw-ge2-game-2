@@ -29,7 +29,6 @@ public class EnemyMovement : MonoBehaviour {
 			transform.LookAt(target.position);
 		}
 
-		enemy.speed = enemy.startSpeed;
 	}
 
 	void GetNextWaypoint()
@@ -44,7 +43,7 @@ public class EnemyMovement : MonoBehaviour {
 		target = Waypoints.points[wavepointIndex];
 	}
 
-	void EndPath()
+    void EndPath()
 	{
 		PlayerStats.Lives--;
 		WaveSpawner.EnemiesAlive--;

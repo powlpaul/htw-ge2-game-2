@@ -61,6 +61,7 @@ public class WaveSpawner : MonoBehaviour {
             {
 				bank.GetComponent<Bank>().TickUp();
             }
+			PlayerStats.Money += 100 ;
 			return;
 		}
 	}
