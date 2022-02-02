@@ -18,6 +18,7 @@ public class WaveSpawner : MonoBehaviour {
 	[SerializeField] Vector2 waveSizeMinMax;
 	[SerializeField] Vector2 waveRateMinMax;
 	[SerializeField] GameObject[] enemies;
+	[SerializeField] SpawningScheme[] enemies2;
 	//public Text waveCountdownText;
 	private static bool isWave = false;
 	public GameManager gameManager;
@@ -69,7 +70,8 @@ public class WaveSpawner : MonoBehaviour {
     {
 		isWave = true;
 		Debug.Log("test");
-		StartCoroutine(SpawnWave());
+		StartCoroutine(SpawnWave2());
+		//SpawnWave2();
 		
 	}
 
@@ -93,7 +95,35 @@ public class WaveSpawner : MonoBehaviour {
 
 		waveIndex++;
 	}
+	IEnumerator SpawnWave2()
+    {
+		PlayerStats.Rounds++;
 
+		Wave wave = waves2[waveIndex];
+
+		EnemiesAlive = wave.count;
+
+		//while(isWave)
+		//{
+			StartCoroutine(SpawnEnemy2(wave.enemy, 5));
+		yield return new WaitForSeconds(0.4f);
+		StartCoroutine(SpawnEnemy2(wave.enemy, 10));
+			//SpawnEnemy(wave.enemy);
+		
+		//}
+
+		waveIndex++;
+	}
+
+	IEnumerator SpawnEnemy2(GameObject enemy, int amount)
+    {
+		for(int i = 0; i < amount; i++)
+        {
+			Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+			yield return new WaitForSeconds(1f);
+		}
+		
+	}
 	void SpawnEnemy (GameObject enemy)
 	{
 		Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
