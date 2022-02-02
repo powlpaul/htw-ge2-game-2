@@ -6,6 +6,8 @@ public class Turret : MonoBehaviour {
 	private Transform target;
 	private Enemy targetEnemy;
 
+	[SerializeField] private Animator animator;
+
 	[Header("General")]
 	[SerializeField] string title;
 	public float range = 15f;
@@ -62,6 +64,7 @@ public class Turret : MonoBehaviour {
 		} else
 		{
 			target = null;
+			animator.SetBool("isAttacking", false);
 		}
 
 	}
@@ -103,7 +106,11 @@ public class Turret : MonoBehaviour {
 		if (bullet != null)
 			bullet.damage = this.damage;
 		if (title == "Boomerang Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
-		else bullet.Seek(target);
+		else
+		{
+			bullet.Seek(target);
+			animator.SetBool("isAttacking", true);
+		}
 	}
 
 	void OnDrawGizmosSelected ()
