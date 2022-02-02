@@ -18,7 +18,7 @@ public class WaveSpawner : MonoBehaviour {
 	[SerializeField] Vector2 waveSizeMinMax;
 	[SerializeField] Vector2 waveRateMinMax;
 	[SerializeField] GameObject[] enemies;
-	[SerializeField] SpawningScheme[] enemies2;
+	[SerializeField] SpawningScheme[] spawningSchemes;
 	//public Text waveCountdownText;
 	private static bool isWave = false;
 	public GameManager gameManager;
@@ -38,11 +38,16 @@ public class WaveSpawner : MonoBehaviour {
 
 		for(int i = 0;i < numOfWaves; i++)
         {
-			waves2[i] = new Wave(
-				enemies[0],
-				(int) Mathf.Lerp(waveSizeMinMax.x, waveSizeMinMax.y,(float) i / numOfWaves), 
-				Mathf.Lerp(waveRateMinMax.x, waveRateMinMax.y,(float) i / numOfWaves)
-			);
+			Wave newWave = new Wave();
+			foreach(SpawningScheme spawningScheme in spawningSchemes)
+            {
+				newWave.enemiesInWave.Add(new EnemyInWave(
+					spawningScheme.enemy,
+					(int) Mathf.Lerp(spawningScheme.minMaxAmount.x, spawningScheme.minMaxAmount.y, i / spawningScheme.finalWave),
+					0.5f
+					));
+            }
+			waves2[i] = newWave;
         }
     }
     void Update ()

@@ -9956,6 +9956,10 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 2093475345}
+    - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 146912, guid: e27bb2f85e38d094a9a663224345bc3c, type: 3}
     - target: {fileID: 4669064187486661684, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: m_RootOrder
       value: 0
