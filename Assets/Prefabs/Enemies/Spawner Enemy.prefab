@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 11483098}
   - component: {fileID: 114000011600303422}
   m_Layer: 0
-  m_Name: Enemy_Simple
+  m_Name: Spawner Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,10 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f36604d5db50484e9202ccb5aadd320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
+  startSpeed: 5
+  EnemyAfterDeath: {fileID: 146912, guid: e27bb2f85e38d094a9a663224345bc3c, type: 3}
   speed: 10
-  startHealth: 100
-  worth: 10
+  startHealth: 500
+  worth: 20
   healthBar: {fileID: 114000010702059108}
 --- !u!114 &114000011600303422
 MonoBehaviour:
@@ -391,6 +392,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 468f1f95a4aa03d4c8742f3a8bb062b5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf1be783d3ef2664ebeeb3e34809bc22, type: 2}
     - target: {fileID: 919132149155446097, guid: 468f1f95a4aa03d4c8742f3a8bb062b5, type: 3}
       propertyPath: m_Name
       value: Ball__001
