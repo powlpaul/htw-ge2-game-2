@@ -41,9 +41,9 @@ public class WaveSpawner : MonoBehaviour {
 			Wave newWave = new Wave();
 			foreach(SpawningScheme spawningScheme in spawningSchemes)
             {
-				newWave.enemiesInWave.Add(new EnemyInWave(
+				if(i >= spawningScheme.startWave)newWave.enemiesInWave.Add(new EnemyInWave(
 					spawningScheme.enemy,
-					(int) Mathf.Lerp(spawningScheme.minMaxAmount.x, spawningScheme.minMaxAmount.y, i / spawningScheme.finalWave),
+					(int) Mathf.Lerp(spawningScheme.minMaxAmount.x, spawningScheme.minMaxAmount.y,(float) (i - spawningScheme.startWave) / spawningScheme.finalWave),
 					0.5f
 					));
             }
@@ -84,35 +84,22 @@ public class WaveSpawner : MonoBehaviour {
     {
 		return isWave;
     }
-	IEnumerator SpawnWave ()
-	{
-		PlayerStats.Rounds++;
 
-		Wave wave = waves2[waveIndex];
-
-		EnemiesAlive = wave.count;
-
-		for (int i = 0; i < wave.count; i++)
-		{
-			SpawnEnemy(wave.enemy);
-			yield return new WaitForSeconds(1f / wave.rate);
-		}
-
-		waveIndex++;
-	}
 	IEnumerator SpawnWave2()
     {
 		PlayerStats.Rounds++;
 
 		Wave wave = waves2[waveIndex];
 
-		EnemiesAlive = wave.count;
+		EnemiesAlive = wave.GetCount();
 
-		//while(isWave)
-		//{
-			StartCoroutine(SpawnEnemy2(wave.enemy, 5));
-		yield return new WaitForSeconds(0.4f);
-		StartCoroutine(SpawnEnemy2(wave.enemy, 10));
+		foreach (EnemyInWave enemyInWave in wave.enemiesInWave)
+        {
+			StartCoroutine(SpawnEnemy2(enemyInWave.enemy, enemyInWave.count));
+			yield return new WaitForSeconds(0.5f);
+		}
+
+			//while(isWave)
 			//SpawnEnemy(wave.enemy);
 		
 		//}
