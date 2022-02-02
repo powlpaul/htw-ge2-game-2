@@ -43,7 +43,7 @@ public class WaveSpawner : MonoBehaviour {
             {
 				if(i >= spawningScheme.startWave)newWave.enemiesInWave.Add(new EnemyInWave(
 					spawningScheme.enemy,
-					(int) Mathf.Lerp(spawningScheme.minMaxAmount.x, spawningScheme.minMaxAmount.y,(float) (i - spawningScheme.startWave) / spawningScheme.finalWave),
+					(int) Mathf.Lerp(spawningScheme.minMaxAmount.x, spawningScheme.minMaxAmount.y,(float) (i - spawningScheme.startWave) / (spawningScheme.finalWave - spawningScheme.startWave)),
 					0.5f
 					));
             }

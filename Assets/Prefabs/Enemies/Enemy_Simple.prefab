@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 10
+  EnemyAfterDeath: {fileID: 0}
   speed: 10
   startHealth: 100
   worth: 10

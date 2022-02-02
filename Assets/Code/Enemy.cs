@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour {
 	void Die ()
 	{
 		isDead = true;
-
+		GameObject.Find("AudioMaster").GetComponent<AudioSource>().Play();
 		PlayerStats.Money += worth;
 
 		/*GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
