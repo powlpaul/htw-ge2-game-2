@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 485008}
   - component: {fileID: 11422402}
   - component: {fileID: -68527311053861308}
+  - component: {fileID: -252734489073303914}
   m_Layer: 0
   m_Name: SlowTurret
   m_TagString: Tower
@@ -138,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0be04c0c5f4d4b85da0b947019937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 4799029939810873251}
   title: Wizard Bird
   range: 15
   upgradePath:
@@ -187,6 +189,44 @@ CapsuleCollider:
   m_Height: 1.41
   m_Direction: 1
   m_Center: {x: 0, y: 1.88, z: 0}
+--- !u!95 &-252734489073303914
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174700}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7f49fda2f2d34de68105a382edb77ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &4799029939810873251
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626925778747911702}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57b275429797f4e6282ad8ab81a30a79, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6284483229699855175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,6 +296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e801c7dceb4f5489833aec39078feb, type: 3}
+--- !u!1 &6626925778747911702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e801c7dceb4f5489833aec39078feb, type: 3}
+  m_PrefabInstance: {fileID: 6284483229699855175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5817596622348334252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 38e801c7dceb4f5489833aec39078feb, type: 3}
