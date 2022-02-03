@@ -87,7 +87,6 @@ public class Turret : MonoBehaviour {
 		}
 
 		fireCountdown -= Time.deltaTime;
-		animator.SetBool("isAttacking", false);
 		
 
 	}
