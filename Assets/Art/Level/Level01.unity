@@ -3787,6 +3787,133 @@ MonoBehaviour:
     prefab: {fileID: 0}
     cost: 0
   isUpgraded: 0
+--- !u!1 &864578762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 864578764}
+  - component: {fileID: 864578763}
+  m_Layer: 0
+  m_Name: AudioMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &864578763
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864578762}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fd211ea9fdf2a364f8ccf2cd7fdf3c08, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.565
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &864578764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864578762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.387955, y: -10.742406, z: 4.23246}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &868482845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9966,7 +10093,7 @@ PrefabInstance:
       objectReference: {fileID: 146912, guid: e27bb2f85e38d094a9a663224345bc3c, type: 3}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: spawningSchemes.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: enemies2.Array.data[0].enemy
@@ -10005,6 +10132,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 146912, guid: 38fd8667af752cc42ab55e5a1086b54c, type: 3}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
+      propertyPath: spawningSchemes.Array.data[2].enemy
+      value: 
+      objectReference: {fileID: 146912, guid: c5736332ae965184d9dcdbde79f9c340, type: 3}
+    - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: enemies2.Array.data[0].minMaxAmount.x
       value: 1
       objectReference: {fileID: 0}
@@ -10030,7 +10161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: spawningSchemes.Array.data[0].finalWave
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: spawningSchemes.Array.data[1].finalWave
@@ -10038,7 +10169,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: spawningSchemes.Array.data[1].startWave
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
+      propertyPath: spawningSchemes.Array.data[2].finalWave
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
+      propertyPath: spawningSchemes.Array.data[2].startWave
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: spawningSchemes.Array.data[0].minMaxAmount.x
@@ -10046,7 +10185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: spawningSchemes.Array.data[0].minMaxAmount.y
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: spawningSchemes.Array.data[1].minMaxAmount.x
@@ -10054,7 +10193,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: spawningSchemes.Array.data[1].minMaxAmount.y
-      value: 30
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
+      propertyPath: spawningSchemes.Array.data[2].minMaxAmount.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669064187486661683, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
+      propertyPath: spawningSchemes.Array.data[2].minMaxAmount.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4669064187486661684, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: m_RootOrder
