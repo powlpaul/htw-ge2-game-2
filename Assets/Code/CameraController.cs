@@ -54,7 +54,7 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * movementTime);
 
         newZoom += zoomAmount * Input.mouseScrollDelta.y;
-
+        if(newZoom.y < 10 || newZoom.y > 70) newZoom -= zoomAmount * Input.mouseScrollDelta.y;
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * movementTime);
     }
 }
