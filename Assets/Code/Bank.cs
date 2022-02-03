@@ -14,6 +14,7 @@ public class Bank : MonoBehaviour
     void Start()
     {
         Initialize();
+        Debug.Log(CalcMoney(2));
     }
     // Update is called once per frame
     void Update()
@@ -22,6 +23,11 @@ public class Bank : MonoBehaviour
         
 
         
+    }
+    private float CalcMoney(int depth)
+    {
+        if (depth == 1) return moneyPerTick;
+        else return moneyPerTick + CalcMoney(depth - 1) * 1.1f;
     }
     public void OnMouseDown()
     {
