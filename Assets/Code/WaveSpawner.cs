@@ -41,7 +41,7 @@ public class WaveSpawner : MonoBehaviour {
 			Wave newWave = new Wave();
 			foreach(SpawningScheme spawningScheme in spawningSchemes)
             {
-				if(i >= spawningScheme.startWave)newWave.enemiesInWave.Add(new EnemyInWave(
+				if(i >= spawningScheme.startWave && i <= spawningScheme.finalWave)newWave.enemiesInWave.Add(new EnemyInWave(
 					spawningScheme.enemy,
 					(int) Mathf.Lerp(spawningScheme.minMaxAmount.x, spawningScheme.minMaxAmount.y,(float) (i - spawningScheme.startWave) / (spawningScheme.finalWave - spawningScheme.startWave)),
 					0.5f
@@ -73,6 +73,7 @@ public class WaveSpawner : MonoBehaviour {
 	}
 	public void StartNextWave()
     {
+		AudioMaster.AM.PlayTurretClickSound();
 		isWave = true;
 		Debug.Log("test");
 		StartCoroutine(SpawnWave2());

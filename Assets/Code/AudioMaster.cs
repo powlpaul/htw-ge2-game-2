@@ -39,7 +39,7 @@ public class AudioMaster : MonoBehaviour
     }
     public void PlayEnemyDeathSound()
     {
-        audioSource.PlayOneShot(enemyDeathSound, 1f);
+        audioSource.PlayOneShot(enemyDeathSound, 0.5f);
     }
     public void PlayTurretClickSound()
     {

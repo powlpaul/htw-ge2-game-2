@@ -60,7 +60,7 @@ public class MenuManager : MonoBehaviour
     public void NextRound(int roundNumber)
     {
         RoundDisplay.text = $"{roundNumber}/{maxRounds}";
-       // AudioMaster.AM.PlayTurretClickSound();
+       //AudioMaster.AM.PlayTurretClickSound();
     }
 
     public void ToggleGameSpeed()
@@ -113,7 +113,8 @@ public class MenuManager : MonoBehaviour
         buyMenu.SetActive(true);
         upgradeMenu.SetActive(false);
         bankMenu.SetActive(false);
-     
+        AudioMaster.AM.PlayTurretClickSound();
+
     }
     public void OnUpgradePressed()
     {
@@ -124,6 +125,8 @@ public class MenuManager : MonoBehaviour
     public void OnCashOutPressed()
     {
         displayedBank.CashOut();
+        UpdateBankStatsInDisplay();
+        AudioMaster.AM.PlayTurretClickSound();
     }
     public void EndGame()
     {
