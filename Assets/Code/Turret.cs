@@ -81,11 +81,13 @@ public class Turret : MonoBehaviour {
 	 
 		if (fireCountdown <= 0f)
 		{
+			animator.SetBool("isAttacking", true);
 			Shoot();
 			fireCountdown = 1f / fireRate;
 		}
 
 		fireCountdown -= Time.deltaTime;
+		animator.SetBool("isAttacking", false);
 		
 
 	}
@@ -109,7 +111,6 @@ public class Turret : MonoBehaviour {
 		else
 		{
 			bullet.Seek(target);
-			animator.SetBool("isAttacking", true);
 		}
 	}
 

@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0be04c0c5f4d4b85da0b947019937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 6218275902042295414}
   title: Sniper Bird
   range: 10000
   upgradePath:
@@ -145,6 +146,7 @@ MonoBehaviour:
     attackSpeed: 0.5
     slowAmount: 0
     slowTime: 0
+    slowZoneDuration: 0
     bounceAmount: 0
     upgradeCost: 400
   - range: 60
@@ -152,6 +154,7 @@ MonoBehaviour:
     attackSpeed: 0.6
     slowAmount: 0
     slowTime: 0
+    slowZoneDuration: 0
     bounceAmount: 0
     upgradeCost: 500
   - range: 60
@@ -159,6 +162,7 @@ MonoBehaviour:
     attackSpeed: 0.7
     slowAmount: 0
     slowTime: 0
+    slowZoneDuration: 0
     bounceAmount: 0
     upgradeCost: 1500
   - range: 80
@@ -166,14 +170,12 @@ MonoBehaviour:
     attackSpeed: 1
     slowAmount: 0
     slowTime: 0
+    slowZoneDuration: 0
     bounceAmount: 0
     upgradeCost: 0
   bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
   fireRate: 0.5
   damage: 50
-  useLaser: 0
-  damageOverTime: 30
-  slowAmount: 0.5
   lineRenderer: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 454316}
@@ -193,6 +195,25 @@ CapsuleCollider:
   m_Height: 2.6923811
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!95 &6218275902042295414
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007137299174591470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4fcfee70ec3aa44acb20b55eb162e4fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1665101975167973055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -262,6 +283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17b5c9af016428949b68cb0a7826716a, type: 3}
+--- !u!1 &2007137299174591470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 17b5c9af016428949b68cb0a7826716a, type: 3}
+  m_PrefabInstance: {fileID: 1665101975167973055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1193761841248817492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 17b5c9af016428949b68cb0a7826716a, type: 3}
