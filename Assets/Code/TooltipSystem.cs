@@ -7,26 +7,22 @@ public class TooltipSystem : MonoBehaviour
 
     private static TooltipSystem TTS;
 
+
+    public Tooltip tooltip;
     public void Awake()
     {
         TTS = this;
+        Hide();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    public static void Show()
-    {
 
+    public static void Show(string content, string header = "")
+    {
+        TTS.tooltip.SetText(content, header);
+        TTS.tooltip.gameObject.SetActive(true);
     }
+  
     public static void Hide()
     {
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        TTS.tooltip.gameObject.SetActive(false);
     }
 }
