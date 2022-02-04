@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private Text healthDisplay;
-    [SerializeField] private Text moneyDisplay;
-    [SerializeField] private Text RoundDisplay;
+    [SerializeField] private TextMeshProUGUI healthDisplay;
+    [SerializeField] private TextMeshProUGUI moneyDisplay;
+    [SerializeField] private TextMeshProUGUI RoundDisplay;
     [SerializeField] private Button nextRoundButton;
     [Header("ShopMenu")]
     [SerializeField] private GameObject buyMenu;
-    [SerializeField] private Text[] birdPrices;
+    [SerializeField] private TextMeshProUGUI[] birdPrices;
     [Header("TurretMenu")]
     [SerializeField] private GameObject upgradeMenu;
-    [SerializeField] private Text turretName;
-    [SerializeField] private Text upgradeCostDisplay;
-    [SerializeField] private Text SellAmountDisplay;
-    [SerializeField] private Text killCountDisplay;
+    [SerializeField] private TextMeshProUGUI turretName;
+    [SerializeField] private TextMeshProUGUI turretLvL;
+    [SerializeField] private TextMeshProUGUI upgradeCostDisplay;
+    [SerializeField] private TextMeshProUGUI SellAmountDisplay;
+    [SerializeField] private TextMeshProUGUI killCountDisplay;
+    [SerializeField] private GameObject upgradeButton1;
+    [SerializeField] private GameObject upgradeButton2;
     [Header("BankMenu")]
     [SerializeField] private GameObject bankMenu;
     [SerializeField] private Text bankName;
@@ -94,10 +98,22 @@ public class MenuManager : MonoBehaviour
     }
     public void UpdateTurretStatsInDisplay()
     {
-        turretName.text = displayedTurret.GetTitle() + " LVL " + (displayedTurret.GetCurrentLevel() + 1);
+        turretName.text = displayedTurret.GetTitle();
+        turretLvL.text = (displayedTurret.GetCurrentLevel() + 1) + " LVL ";
         SellAmountDisplay.text = "" + displayedTurret.GetSellAmount() + "$";
         upgradeCostDisplay.text = "" + displayedTurret.GetUpgradeAmount() + "$";
         killCountDisplay.text =  displayedTurret.GetKillCount() + "Kills";
+        if(displayedTurret.GetUpgradeAmount() > 0)
+        {
+            upgradeButton1.SetActive(true);
+            upgradeButton2.SetActive(displayedTurret.GetCurrentLevelStats().isSplittingPath);
+        }
+        else
+        {
+            upgradeButton1.SetActive(false);
+            upgradeButton2.SetActive(false);
+        }
+       
     }
     public void UpdateBankStatsInDisplay()
     {
