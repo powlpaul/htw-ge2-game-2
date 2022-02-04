@@ -4,7 +4,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public static bool GameIsOver;
-	public static MenuManager menuManager;
+	[SerializeField] private MenuManager menuManager;
 	void Start ()
 	{
 		GameIsOver = false;

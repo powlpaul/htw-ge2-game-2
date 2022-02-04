@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text bankUpgradeCostDisplay;
     [SerializeField] private Text bankSellAmountDisplay;
     [SerializeField] private Text bankMoneyDisplay;
+    [SerializeField] private GameObject gameOverScreen;
     private int maxRounds;
     private Turret displayedTurret;
     private Bank displayedBank;
@@ -123,6 +125,18 @@ public class MenuManager : MonoBehaviour
     public void EndGame()
     {
         //TODO show another screen which reads "you lost'
+        buyMenu.SetActive(false);
+        upgradeMenu.SetActive(false);
+        bankMenu.SetActive(false);
+        Time.timeScale = 0;
+
+        gameOverScreen.SetActive(true);
+    }
+
+    public void OnGameOverReset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void WinGame()
