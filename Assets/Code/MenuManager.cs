@@ -22,12 +22,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI killCountDisplay;
     [SerializeField] private GameObject upgradeButton1;
     [SerializeField] private GameObject upgradeButton2;
+    [SerializeField] private RawImage birdImage;
     [Header("BankMenu")]
     [SerializeField] private GameObject bankMenu;
     [SerializeField] private Text bankName;
     [SerializeField] private Text bankUpgradeCostDisplay;
     [SerializeField] private Text bankSellAmountDisplay;
     [SerializeField] private Text bankMoneyDisplay;
+    [Header("references")]
+    [SerializeField] private  Texture2D birdImages;
     private int maxRounds;
     private Turret displayedTurret;
     private Bank displayedBank;
@@ -99,10 +102,11 @@ public class MenuManager : MonoBehaviour
     public void UpdateTurretStatsInDisplay()
     {
         turretName.text = displayedTurret.GetTitle();
-        turretLvL.text = (displayedTurret.GetCurrentLevel() + 1) + " LVL ";
+        turretLvL.text = "LVL " + (displayedTurret.GetCurrentLevel() + 1);
         SellAmountDisplay.text = "" + displayedTurret.GetSellAmount() + "$";
         upgradeCostDisplay.text = "" + displayedTurret.GetUpgradeAmount() + "$";
-        killCountDisplay.text =  displayedTurret.GetKillCount() + "Kills";
+        killCountDisplay.text =  displayedTurret.GetKillCount() + " KILLS";
+        birdImage.texture = displayedTurret.previewImage;
         if(displayedTurret.GetUpgradeAmount() > 0)
         {
             upgradeButton1.SetActive(true);
@@ -143,6 +147,11 @@ public class MenuManager : MonoBehaviour
         displayedBank.CashOut();
         UpdateBankStatsInDisplay();
         AudioMaster.AM.PlayTurretClickSound();
+    }
+    public void OnSellPressed()
+    {
+        displayedTurret.Sell();
+        HideTurretScreen();
     }
     public void EndGame()
     {

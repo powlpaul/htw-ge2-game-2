@@ -149,6 +149,7 @@ MonoBehaviour:
     slowZoneDuration: 0
     bounceAmount: 0
     upgradeCost: 500
+    isSplittingPath: 0
   - range: 22
     damage: 70
     attackSpeed: 1.1
@@ -157,6 +158,7 @@ MonoBehaviour:
     slowZoneDuration: 0
     bounceAmount: 0
     upgradeCost: 600
+    isSplittingPath: 0
   - range: 25
     damage: 100
     attackSpeed: 1.5
@@ -165,6 +167,7 @@ MonoBehaviour:
     slowZoneDuration: 0
     bounceAmount: 0
     upgradeCost: 0
+    isSplittingPath: 0
   bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
   fireRate: 1
   damage: 50
@@ -173,6 +176,7 @@ MonoBehaviour:
   partToRotate: {fileID: 454316}
   turnSpeed: 10
   firePoint: {fileID: 482280}
+  previewImage: {fileID: 2800000, guid: 06d7946cf40598744bd3b7f8fcdb0a18, type: 3}
 --- !u!136 &-68527311053861308
 CapsuleCollider:
   m_ObjectHideFlags: 0

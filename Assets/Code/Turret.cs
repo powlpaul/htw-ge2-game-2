@@ -31,7 +31,7 @@ public class Turret : MonoBehaviour {
 	public float turnSpeed = 10f;
 
 	public Transform firePoint;
-
+	public Texture2D previewImage;
     // Use this for initialization
     void Start () {
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -125,7 +125,11 @@ public class Turret : MonoBehaviour {
 		this.damage = upgradePath[currentLevel].damage;
 
 	}
-
+	public void Sell()
+    {
+		PlayerStats.Money += GetSellAmount();
+		Destroy();
+    }
 	public string GetTitle()
     {
 		return title;

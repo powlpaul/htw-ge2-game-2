@@ -404,9 +404,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1163.3082, y: -92.63158}
+  m_AnchoredPosition: {x: 837.2932, y: 1796.0901}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: -0.10588972, y: 0.4142539}
+  m_Pivot: {x: 0.93609023, y: 2.1625836}
 --- !u!222 &1686709813
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -642,21 +642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e58de02bab49ae418e7441cce2c14a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &721518680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172396571985026224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be8e39a7fd2e940479158268bd69ae50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  header: Attack Bird
-  content: on the Frontline of the great bird war this feisty little fledling uses
-    his ball to dish out solid single target damage
 --- !u!1001 &4669064188179724149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1682,17 +1667,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
---- !u!114 &4544469085756183185 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9212935105210672612, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
-  m_PrefabInstance: {fileID: 4669064188179724149}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &445918965119281875 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5114930066412297638, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
@@ -1704,11 +1678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &9172396571985026224 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4576008178317044677, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
-  m_PrefabInstance: {fileID: 4669064188179724149}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &9172396571549404177 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4576008178952944484, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
@@ -1739,6 +1708,17 @@ MonoBehaviour:
 --- !u!114 &6434572205504100239 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1839694540796018938, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
+  m_PrefabInstance: {fileID: 4669064188179724149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4544469085756183185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9212935105210672612, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
   m_PrefabInstance: {fileID: 4669064188179724149}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
