@@ -26,6 +26,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text bankSellAmountDisplay;
     [SerializeField] private Text bankMoneyDisplay;
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject pauseMenu;
+
+
+    private bool isPauseMenuActive = false;
     private int maxRounds;
     private Turret displayedTurret;
     private Bank displayedBank;
@@ -44,6 +48,21 @@ public class MenuManager : MonoBehaviour
     {
         if (WaveSpawner.GetWaveState()) nextRoundButton.interactable = false;
         else nextRoundButton.interactable = true;
+
+        if (Input.GetKeyUp(KeyCode.Escape) && !isPauseMenuActive)
+        {
+            buyMenu.SetActive(false);
+            pauseMenu.SetActive(true);
+            isPauseMenuActive = true;
+            Time.timeScale = 0;
+        }
+        else if(Input.GetKeyUp(KeyCode.Escape) && isPauseMenuActive)
+        {
+            pauseMenu.SetActive(false);
+            isPauseMenuActive = false;
+            Time.timeScale = 1;
+            buyMenu.SetActive(true);
+        }
     }
 
     public void Setup(int maxRounds)
@@ -135,12 +154,30 @@ public class MenuManager : MonoBehaviour
 
     public void OnGameOverReset()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        string activeScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(activeScene);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(activeScene));
+
         Time.timeScale = 1;
     }
 
     public void WinGame()
     {
         //TODO DISPLAY set the winGame hud as enabled;
+    }
+
+    public void OnResume()
+    {
+        pauseMenu.SetActive(false);
+        isPauseMenuActive = false;
+        Time.timeScale = 1;
+        buyMenu.SetActive(true);
+    }
+
+    public void OnQuit()
+    {
+        SceneManager.LoadScene("MainMenu");
+
+        Time.timeScale = 0;
     }
 }
