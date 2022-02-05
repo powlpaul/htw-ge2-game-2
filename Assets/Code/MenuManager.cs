@@ -125,8 +125,8 @@ public class MenuManager : MonoBehaviour
     }
     public void UpdateBankStatsInDisplay()
     {
-        bankName.text = "Bank";
-        bankLevelDisplay.text = displayedBank.GetCurrentLevel() + " LVL";
+        bankName.text = "Bird Bank";
+        bankLevelDisplay.text = "LVL " + (displayedBank.GetCurrentLevel() + 1);
         bankSellAmountDisplay.text = displayedBank.GetSellAmount() + "$";
         bankUpgradeCostDisplay.text = displayedBank.GetCurrentStats().upgradeCost + "$";
         bankMoneyDisplay.text = displayedBank.GetGainedMoney() + "$";
@@ -153,8 +153,18 @@ public class MenuManager : MonoBehaviour
     }
     public void OnUpgradePressed()
     {
-        displayedTurret.Upgrade();
-        UpdateTurretStatsInDisplay();
+        if (displayedTurret != null)
+        {
+            displayedTurret.Upgrade();
+            UpdateTurretStatsInDisplay();
+        }
+        else if (displayedBank != null)
+        {
+            displayedBank.Upgrade();
+            UpdateBankStatsInDisplay();
+        }
+            
+       
         AudioMaster.AM.PlayTurretClickSound();
     }
     public void OnCashOutPressed()
@@ -165,8 +175,16 @@ public class MenuManager : MonoBehaviour
     }
     public void OnSellPressed()
     {
-        displayedTurret.Sell();
-        HideTurretScreen();
+        if(displayedTurret != null)
+        {
+            displayedTurret.Sell();
+            HideTurretScreen();
+        }else if(displayedBank != null)
+        {
+            displayedBank.Sell();
+            HideTurretScreen();
+        }
+      
     }
     public void EndGame()
     {
