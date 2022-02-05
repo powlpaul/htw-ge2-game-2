@@ -7,8 +7,9 @@
 
 public class BankStats 
 {
-    int maxMoney = 0;
-    int moneyPerTick = 0;
-    int interestPercent = 0;
-    int upgradeCost =0;
+    public int maxMoney = 0;
+    public int moneyPerTick = 0;
+    public int interestPercent = 0;
+    public int upgradeCost =0;
+    public bool isSplittingPath;
 }

@@ -31,6 +31,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bankMoneyDisplay;
     [SerializeField] private TextMeshProUGUI bankCashOutDisplay;
     [SerializeField] private TextMeshProUGUI bankLevelDisplay;
+    [SerializeField] private GameObject bankUpgradeButton1;
+    [SerializeField] private GameObject bankUpgradeButton2;
     [Header("references")]
     [SerializeField] private  Texture2D birdImages;
     private int maxRounds;
@@ -123,11 +125,22 @@ public class MenuManager : MonoBehaviour
     }
     public void UpdateBankStatsInDisplay()
     {
-        bankName.text = "Bank" + "LVL 1";
+        bankName.text = "Bank";
+        bankLevelDisplay.text = displayedBank.GetCurrentLevel() + " LVL";
         bankSellAmountDisplay.text = displayedBank.GetSellAmount() + "$";
-        bankUpgradeCostDisplay.text = "1000$";
-        bankMoneyDisplay.text = displayedBank.GetCount() + "$";
-
+        bankUpgradeCostDisplay.text = displayedBank.GetCurrentStats().upgradeCost + "$";
+        bankMoneyDisplay.text = displayedBank.GetGainedMoney() + "$";
+        bankCashOutDisplay.text = displayedBank.GetCount() + "$";
+        if (displayedBank.GetCurrentStats().upgradeCost > 0)
+        {
+            bankUpgradeButton1.SetActive(true);
+            bankUpgradeButton2.SetActive(displayedBank.GetCurrentStats().isSplittingPath);
+        }
+        else
+        {
+            bankUpgradeButton1.SetActive(false);
+            bankUpgradeButton2.SetActive(false);
+        }
 
     }
     public void HideTurretScreen()

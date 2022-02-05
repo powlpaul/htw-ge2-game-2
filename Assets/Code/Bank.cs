@@ -8,10 +8,9 @@ public class Bank : MonoBehaviour
     [SerializeField] private int maxMoney = 0;
     [SerializeField] private int moneyPerTick = 0;
     [SerializeField] private int interestPercent = 0;
-    [SerializeField] private float tickTime = 0;
     private int gainedMoney =0;
     [SerializeField] private BankStats[] upgradePath;
-    private int level = 0;
+    private int currentLevel = 0;
     private float count;
     void Start()
     {
@@ -54,14 +53,14 @@ public class Bank : MonoBehaviour
     {
         return (int)count;
     }
-    private BankStats GetCurrentStats()
+    public  BankStats GetCurrentStats()
     {
-        return upgradePath[level];
+        return upgradePath[currentLevel];
     }
 
     public int GetCurrentLevel()
     {
-        return level;
+        return currentLevel;
     }
     public int GetGainedMoney()
     {
@@ -79,7 +78,16 @@ public class Bank : MonoBehaviour
         count = 0;
 
     }
+    public void Upgrade()
+    {
+        if (PlayerStats.Money - this.upgradePath[currentLevel].upgradeCost < 0 || this.upgradePath[currentLevel].upgradeCost == 0) return;
+        PlayerStats.Money -= this.upgradePath[currentLevel].upgradeCost;
+        currentLevel++;
+        this.maxMoney = upgradePath[currentLevel].maxMoney;
+        this.moneyPerTick = upgradePath[currentLevel].moneyPerTick;
+        this.interestPercent = upgradePath[currentLevel].interestPercent;
 
+    }
     public void Destroy()
     {
         Destroy(gameObject);
