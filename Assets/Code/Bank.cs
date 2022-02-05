@@ -9,7 +9,9 @@ public class Bank : MonoBehaviour
     [SerializeField] private int moneyPerTick = 0;
     [SerializeField] private int interestPercent = 0;
     [SerializeField] private float tickTime = 0;
-
+    private int gainedMoney =0;
+    [SerializeField] private BankStats[] upgradePath;
+    private int level = 0;
     private float count;
     void Start()
     {
@@ -52,13 +54,28 @@ public class Bank : MonoBehaviour
     {
         return (int)count;
     }
+    private BankStats GetCurrentStats()
+    {
+        return upgradePath[level];
+    }
+
+    public int GetCurrentLevel()
+    {
+        return level;
+    }
+    public int GetGainedMoney()
+    {
+        return gainedMoney;
+    }
     public void Sell()
     {
         PlayerStats.Money += 400 + (int)count;
+        Destroy(gameObject);
     }
     public void CashOut()
     {
         PlayerStats.Money += Mathf.RoundToInt(count);
+        gainedMoney += Mathf.RoundToInt(count);
         count = 0;
 
     }

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode()]
+
 
 /*this class was coded using the following tutorial:
  * https://www.youtube.com/watch?v=HXFoUGw7eKk

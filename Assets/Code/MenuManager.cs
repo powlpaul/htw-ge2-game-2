@@ -25,10 +25,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private RawImage birdImage;
     [Header("BankMenu")]
     [SerializeField] private GameObject bankMenu;
-    [SerializeField] private Text bankName;
-    [SerializeField] private Text bankUpgradeCostDisplay;
-    [SerializeField] private Text bankSellAmountDisplay;
-    [SerializeField] private Text bankMoneyDisplay;
+    [SerializeField] private TextMeshProUGUI bankName;
+    [SerializeField] private TextMeshProUGUI bankUpgradeCostDisplay;
+    [SerializeField] private TextMeshProUGUI bankSellAmountDisplay;
+    [SerializeField] private TextMeshProUGUI bankMoneyDisplay;
+    [SerializeField] private TextMeshProUGUI bankCashOutDisplay;
+    [SerializeField] private TextMeshProUGUI bankLevelDisplay;
     [Header("references")]
     [SerializeField] private  Texture2D birdImages;
     private int maxRounds;
