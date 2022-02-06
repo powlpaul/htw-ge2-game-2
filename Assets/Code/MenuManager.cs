@@ -27,6 +27,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text bankMoneyDisplay;
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject winGameScreen;
 
 
     private bool isPauseMenuActive = false;
@@ -164,6 +165,12 @@ public class MenuManager : MonoBehaviour
     public void WinGame()
     {
         //TODO DISPLAY set the winGame hud as enabled;
+        buyMenu.SetActive(false);
+        upgradeMenu.SetActive(false);
+        bankMenu.SetActive(false);
+        Time.timeScale = 0;
+
+        winGameScreen.SetActive(true);
     }
 
     public void OnResume()
@@ -175,6 +182,20 @@ public class MenuManager : MonoBehaviour
     }
 
     public void OnQuit()
+    {
+        SceneManager.LoadScene("MainMenu");
+
+        Time.timeScale = 0;
+    }
+
+    public void OnNext()
+    {
+        SceneManager.LoadScene("Level02");
+
+        Time.timeScale = 1;
+    }
+
+    public void OnFinish()
     {
         SceneManager.LoadScene("MainMenu");
 
