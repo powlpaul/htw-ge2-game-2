@@ -65,7 +65,15 @@ public class Turret : MonoBehaviour {
 		}
 
 	}
-
+	void DamageAllEnemies()
+    {
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+		foreach (GameObject enemy in enemies)
+        {
+			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+			if (distanceToEnemy < range) enemy.GetComponent<Enemy>().TakeDamage(50);
+		}
+	}
 	// Update is called once per frame
 	void Update () {
 		if (target == null)

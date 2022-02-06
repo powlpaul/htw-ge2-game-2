@@ -149,6 +149,8 @@ MonoBehaviour:
     bounceAmount: 0
     upgradeCost: 400
     isSplittingPath: 0
+    name: Sniper Bird
+    description: 
   - range: 60
     damage: 55
     attackSpeed: 0.6
@@ -158,6 +160,8 @@ MonoBehaviour:
     bounceAmount: 0
     upgradeCost: 500
     isSplittingPath: 0
+    name: Sniper Bird
+    description: 
   - range: 60
     damage: 55
     attackSpeed: 0.7
@@ -165,8 +169,10 @@ MonoBehaviour:
     slowTime: 0
     slowZoneDuration: 0
     bounceAmount: 0
-    upgradeCost: 1500
-    isSplittingPath: 0
+    upgradeCost: 650
+    isSplittingPath: 1
+    name: Sniper Bird
+    description: 
   - range: 80
     damage: 60
     attackSpeed: 1
@@ -176,6 +182,24 @@ MonoBehaviour:
     bounceAmount: 0
     upgradeCost: 0
     isSplittingPath: 0
+    name: '"Hawk"Eye'
+    description: "\"There is no victory without precision\" \u2013 honing is already
+      deadly trigger in this battle this bird can now hit a sunflower seed from 80
+      meters away and will strike with precision. this upgrade will reduce the fire
+      rate but greatly increase the damage."
+  - range: 80
+    damage: 60
+    attackSpeed: 1
+    slowAmount: 0
+    slowTime: 0
+    slowZoneDuration: 0
+    bounceAmount: 0
+    upgradeCost: 0
+    isSplittingPath: 0
+    name: White Bird
+    description: "\u201CThey will not know what hit them\u201D \u2013 transcending
+      every rule that precision should have this bird can now see EVERYTHING. This
+      upgrade will give this bird infinite range."
   bulletPrefab: {fileID: 185070, guid: 72dcdaeff7f51a34a83fe0253011609c, type: 3}
   fireRate: 0.5
   damage: 50
