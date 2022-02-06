@@ -19,6 +19,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI turretName;
     [SerializeField] private TextMeshProUGUI turretLvL;
     [SerializeField] private TextMeshProUGUI upgradeCostDisplay;
+    [SerializeField] private TextMeshProUGUI upgradeCostDisplay2;
     [SerializeField] private TextMeshProUGUI SellAmountDisplay;
     [SerializeField] private TextMeshProUGUI killCountDisplay;
     [SerializeField] private GameObject upgradeButton1;
@@ -142,6 +143,7 @@ public class MenuManager : MonoBehaviour
             {
                 upgradeButton2.SetActive(true);
                 upgradeToolTip2.header = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 2).name;
+                upgradeCostDisplay2.text = "" + displayedTurret.GetUpgradeAmount() + "$";
                 upgradeToolTip2.content = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 2).description;
             }
             else upgradeButton2.SetActive(false);
@@ -202,7 +204,7 @@ public class MenuManager : MonoBehaviour
     {
         if (displayedTurret != null)
         {
-            displayedTurret.Upgrade();
+            displayedTurret.UpgradeToSecondPath();
             UpdateTurretStatsInDisplay();
         }
     }

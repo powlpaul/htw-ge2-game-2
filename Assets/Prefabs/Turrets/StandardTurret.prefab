@@ -193,7 +193,7 @@ MonoBehaviour:
       damage but at a much greater speed.
   - range: 25
     damage: 50
-    attackSpeed: 5
+    attackSpeed: 1.5
     slowAmount: 0
     slowTime: 0
     slowZoneDuration: 0

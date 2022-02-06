@@ -6955,6 +6955,7 @@ MonoBehaviour:
   turretName: {fileID: 262641612972533091}
   turretLvL: {fileID: 5970967601809844795}
   upgradeCostDisplay: {fileID: 3671632995109564526}
+  upgradeCostDisplay2: {fileID: 8267861139661810976}
   SellAmountDisplay: {fileID: 4301669186571841152}
   killCountDisplay: {fileID: 671872382537264571}
   upgradeButton1: {fileID: 6645355363204023482}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Microsoft.VisualBasic;
 
 public class Turret : MonoBehaviour {
 
@@ -71,14 +72,21 @@ public class Turret : MonoBehaviour {
 	void DamageAllEnemies()
     {
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+		int counter = 0;
 		foreach (GameObject enemy in enemies)
         {
 			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-			if (distanceToEnemy < range) enemy.GetComponent<Enemy>().TakeDamage(50);
+			if (distanceToEnemy <= range)
+			{
+				enemy.GetComponent<Enemy>().TakeDamage(50);
+				counter++;
+			}
 		}
+		Debug.Log(counter);
 	}
 	// Update is called once per frame
 	void Update () {
+	
 		if (target == null)
 		{
 			return;
@@ -90,7 +98,15 @@ public class Turret : MonoBehaviour {
 		if (fireCountdown <= 0f)
 		{
 			animator.SetBool("isAttacking", true);
-			Shoot();
+			if (title == "Storm Bird")
+			{
+				DamageAllEnemies();
+            }
+            else
+            {
+				Shoot();
+			}
+			
 			fireCountdown = 1f / fireRate;
 		}
 
@@ -138,12 +154,20 @@ public class Turret : MonoBehaviour {
 		this.range = upgradePath[currentLevel].range;
 		this.fireRate = upgradePath[currentLevel].attackSpeed;
 		this.damage = upgradePath[currentLevel].damage;
+		if (!string.IsNullOrEmpty(upgradePath[currentLevel].name)) this.title = upgradePath[currentLevel].name;
 
 	}
 	public void UpgradeToSecondPath()
     {
-		//upgradePath.
-    }
+		if (PlayerStats.Money - this.upgradePath[currentLevel].upgradeCost < 0 || this.upgradePath[currentLevel].upgradeCost == 0) return;
+		PlayerStats.Money -= this.upgradePath[currentLevel].upgradeCost;
+		currentLevel +=2;
+		this.range = upgradePath[currentLevel].range;
+		this.fireRate = upgradePath[currentLevel].attackSpeed;
+		this.damage = upgradePath[currentLevel].damage;
+		if (!string.IsNullOrEmpty(upgradePath[currentLevel].name)) this.title = upgradePath[currentLevel].name;
+
+	}
 	public void Sell()
     {
 		PlayerStats.Money += GetSellAmount();
