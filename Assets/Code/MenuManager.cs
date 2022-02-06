@@ -116,9 +116,16 @@ public class MenuManager : MonoBehaviour
         if(displayedTurret.GetUpgradeAmount() > 0)
         {
             upgradeButton1.SetActive(true);
-
+            upgradeToolTip1.header = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 1).name;
             upgradeToolTip1.content = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 1).description;
-            upgradeButton2.SetActive(displayedTurret.GetCurrentLevelStats().isSplittingPath);
+            if (displayedTurret.GetCurrentLevelStats().isSplittingPath)
+            {
+                upgradeButton2.SetActive(true);
+                upgradeToolTip2.header = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 2).name;
+                upgradeToolTip2.content = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 2).description;
+            }
+            else upgradeButton2.SetActive(false);
+
         }
         else
         {
