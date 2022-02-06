@@ -642,6 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e58de02bab49ae418e7441cce2c14a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuManager: {fileID: 0}
 --- !u!1001 &4669064188179724149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -804,6 +805,18 @@ PrefabInstance:
     - target: {fileID: 1002263668817275777, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037325008915931760, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037325009696873462, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4576008178952944480, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
+    - target: {fileID: 1037325009696873462, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGameOverReset
       objectReference: {fileID: 0}
     - target: {fileID: 1207499589825294395, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
       propertyPath: m_AnchorMax.y

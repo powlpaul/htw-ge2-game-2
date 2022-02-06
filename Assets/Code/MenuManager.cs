@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -36,7 +37,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject bankUpgradeButton1;
     [SerializeField] private GameObject bankUpgradeButton2;
     [Header("references")]
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject winGameScreen;
     [SerializeField] private  Texture2D birdImages;
+    private bool isPauseMenuActive = false;
     private int maxRounds;
     private Turret displayedTurret;
     private Bank displayedBank;
@@ -55,6 +60,21 @@ public class MenuManager : MonoBehaviour
     {
         if (WaveSpawner.GetWaveState()) nextRoundButton.interactable = false;
         else nextRoundButton.interactable = true;
+
+        if (Input.GetKeyUp(KeyCode.Escape) && !isPauseMenuActive)
+        {
+            buyMenu.SetActive(false);
+            pauseMenu.SetActive(true);
+            isPauseMenuActive = true;
+            Time.timeScale = 0;
+        }
+        else if(Input.GetKeyUp(KeyCode.Escape) && isPauseMenuActive)
+        {
+            pauseMenu.SetActive(false);
+            isPauseMenuActive = false;
+            Time.timeScale = 1;
+            buyMenu.SetActive(true);
+        }
     }
 
     public void Setup(int maxRounds)
@@ -208,10 +228,60 @@ public class MenuManager : MonoBehaviour
     public void EndGame()
     {
         //TODO show another screen which reads "you lost'
+        buyMenu.SetActive(false);
+        upgradeMenu.SetActive(false);
+        bankMenu.SetActive(false);
+        Time.timeScale = 0;
+
+        gameOverScreen.SetActive(true);
+    }
+
+    public void OnGameOverReset()
+    {
+        string activeScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(activeScene);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(activeScene));
+
+        Time.timeScale = 1;
     }
 
     public void WinGame()
     {
         //TODO DISPLAY set the winGame hud as enabled;
+        buyMenu.SetActive(false);
+        upgradeMenu.SetActive(false);
+        bankMenu.SetActive(false);
+        Time.timeScale = 0;
+
+        winGameScreen.SetActive(true);
+    }
+
+    public void OnResume()
+    {
+        pauseMenu.SetActive(false);
+        isPauseMenuActive = false;
+        Time.timeScale = 1;
+        buyMenu.SetActive(true);
+    }
+
+    public void OnQuit()
+    {
+        SceneManager.LoadScene("MainMenu");
+
+        Time.timeScale = 0;
+    }
+
+    public void OnNext()
+    {
+        SceneManager.LoadScene("Level02");
+
+        Time.timeScale = 1;
+    }
+
+    public void OnFinish()
+    {
+        SceneManager.LoadScene("MainMenu");
+
+        Time.timeScale = 0;
     }
 }

@@ -23,6 +23,7 @@ public class PlayerStats : MonoBehaviour {
     private void Update()
     {
 		menu.UpdateMoney(Money);
+		menu.UpdateHealth(Lives);
 		menu.NextRound(Rounds);
     }
 }
