@@ -125,6 +125,10 @@ public class Turret : MonoBehaviour {
 		this.damage = upgradePath[currentLevel].damage;
 
 	}
+	public void UpgradeToSecondPath()
+    {
+		//upgradePath.
+    }
 	public void Sell()
     {
 		PlayerStats.Money += GetSellAmount();
@@ -170,4 +174,8 @@ public class Turret : MonoBehaviour {
     {
 		return upgradePath[currentLevel];
     }
+	public TurretStats GetLevelStats(int index)
+	{
+		return upgradePath[index];
+	}
 }

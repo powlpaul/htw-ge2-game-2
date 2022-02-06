@@ -23,6 +23,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject upgradeButton1;
     [SerializeField] private GameObject upgradeButton2;
     [SerializeField] private RawImage birdImage;
+    [SerializeField] private TooltipTrigger upgradeToolTip1;
+    [SerializeField] private TooltipTrigger upgradeToolTip2;
     [Header("BankMenu")]
     [SerializeField] private GameObject bankMenu;
     [SerializeField] private TextMeshProUGUI bankName;
@@ -114,6 +116,8 @@ public class MenuManager : MonoBehaviour
         if(displayedTurret.GetUpgradeAmount() > 0)
         {
             upgradeButton1.SetActive(true);
+
+            upgradeToolTip1.content = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 1).description;
             upgradeButton2.SetActive(displayedTurret.GetCurrentLevelStats().isSplittingPath);
         }
         else
@@ -166,6 +170,14 @@ public class MenuManager : MonoBehaviour
             
        
         AudioMaster.AM.PlayTurretClickSound();
+    }
+    public void OnSecondaryUpgradePressed()
+    {
+        if (displayedTurret != null)
+        {
+            displayedTurret.Upgrade();
+            UpdateTurretStatsInDisplay();
+        }
     }
     public void OnCashOutPressed()
     {
