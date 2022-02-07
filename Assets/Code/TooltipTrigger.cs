@@ -26,5 +26,9 @@ class TooltipTrigger : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler
 
     }
 
-
+    public void UpgradePressed()
+    {
+        TooltipSystem.Hide();
+        courseInArea = false;
+    }
 }

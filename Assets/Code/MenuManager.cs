@@ -190,6 +190,7 @@ public class MenuManager : MonoBehaviour
         {
             displayedTurret.Upgrade();
             UpdateTurretStatsInDisplay();
+            upgradeToolTip1.UpgradePressed();
         }
         else if (displayedBank != null)
         {
@@ -204,6 +205,7 @@ public class MenuManager : MonoBehaviour
     {
         if (displayedTurret != null)
         {
+            upgradeToolTip2.UpgradePressed();
             displayedTurret.UpgradeToSecondPath();
             UpdateTurretStatsInDisplay();
         }
