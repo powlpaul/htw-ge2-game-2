@@ -151,6 +151,10 @@ MonoBehaviour:
     bounceAmount: 1
     upgradeCost: 500
     isSplittingPath: 0
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 16
     damage: 70
     attackSpeed: 1.1
@@ -160,6 +164,10 @@ MonoBehaviour:
     bounceAmount: 2
     upgradeCost: 600
     isSplittingPath: 0
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 18
     damage: 100
     attackSpeed: 1.5
@@ -167,8 +175,12 @@ MonoBehaviour:
     slowTime: 0
     slowZoneDuration: 0
     bounceAmount: 3
-    upgradeCost: 0
-    isSplittingPath: 0
+    upgradeCost: 1000
+    isSplittingPath: 1
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 18
     damage: 100
     attackSpeed: 1.5
@@ -178,6 +190,24 @@ MonoBehaviour:
     bounceAmount: 5
     upgradeCost: 0
     isSplittingPath: 0
+    name: Berserk Bird
+    description: "\u201CRage gives me strength\u201D tired of the smug smile of the
+      balls this bird is getting increasingly angrier. This upgrade will grant the
+      berserk more strength for each takedown he scores during the round"
+  - range: 18
+    damage: 100
+    attackSpeed: 1.5
+    slowAmount: 0
+    slowTime: 0
+    slowZoneDuration: 0
+    bounceAmount: 5
+    upgradeCost: 0
+    isSplittingPath: 0
+    name: Ninja Bird
+    description: "\u201CThe shadows are my home\u201D \u2013 remembering his time
+      in the cherry blossom Nippon nest this bird has decided to use the way of the
+      ninja to his advantage by having a chance to confuse each enemy hit by his
+      boomerang and making them go back to the start"
   bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
   fireRate: 1
   damage: 50

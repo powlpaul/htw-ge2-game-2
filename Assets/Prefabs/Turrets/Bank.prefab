@@ -122,3 +122,18 @@ MonoBehaviour:
     interestPercent: 12
     upgradeCost: 0
     isSplittingPath: 0
+  - maxMoney: 2000
+    moneyPerTick: 100
+    interestPercent: 12
+    upgradeCost: 0
+    isSplittingPath: 1
+  - maxMoney: 50000
+    moneyPerTick: 100
+    interestPercent: 20
+    upgradeCost: 0
+    isSplittingPath: 1
+  - maxMoney: 5000
+    moneyPerTick: 500
+    interestPercent: 0
+    upgradeCost: 0
+    isSplittingPath: 1

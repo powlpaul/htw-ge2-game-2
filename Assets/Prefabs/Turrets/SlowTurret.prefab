@@ -152,6 +152,9 @@ MonoBehaviour:
     bounceAmount: 0
     upgradeCost: 500
     isSplittingPath: 0
+    name: Wizard Bird
+    description: Using this battle further his understanding of the magical arts.
+      This upgrade will increase the strength of his slow spells.
   - range: 10
     damage: 70
     attackSpeed: 1.5
@@ -161,6 +164,9 @@ MonoBehaviour:
     bounceAmount: 0
     upgradeCost: 850
     isSplittingPath: 0
+    name: Wizard Bird
+    description: Using this battle further his understanding of the magical arts.
+      This upgrade will increase the strength of his slow spells.
   - range: 15
     damage: 100
     attackSpeed: 2
@@ -168,8 +174,38 @@ MonoBehaviour:
     slowTime: 2
     slowZoneDuration: 2
     bounceAmount: 0
-    upgradeCost: 0
-    isSplittingPath: 0
+    upgradeCost: 500
+    isSplittingPath: 1
+    name: Wizard Bird
+    description: Using this battle further his understanding of the magical arts.
+      This upgrade will increase the strength of his slow spells.
+  - range: 15
+    damage: 100
+    attackSpeed: 2
+    slowAmount: 0.3
+    slowTime: 2
+    slowZoneDuration: 2
+    bounceAmount: 0
+    upgradeCost: 500
+    isSplittingPath: 1
+    name: Ice Wizard
+    description: "\u201CThe magic in the north is much different from ours\u201D
+      - learning the long-lost art from the penguins in the frozen wastes. This bird
+      will from now on unleash ice attacks that will make the balls stand still "
+  - range: 15
+    damage: 100
+    attackSpeed: 2
+    slowAmount: 0.3
+    slowTime: 2
+    slowZoneDuration: 2
+    bounceAmount: 0
+    upgradeCost: 500
+    isSplittingPath: 1
+    name: Archwizard
+    description: "\u201CSharing knowledge is our greatest weapon\u201D - after intricate
+      discussions about fighting style with the boomerang birds this bird learned
+      greatly form them and their throwing art. This upgrade will lead this bird
+      to shoot bouncing slows"
   bulletPrefab: {fileID: 185070, guid: 6b6b484f5033d8e408f678c51049de39, type: 3}
   fireRate: 1
   damage: 50
