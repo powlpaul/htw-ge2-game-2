@@ -19,7 +19,7 @@ public class Turret : MonoBehaviour {
 	[SerializeField] private float fireRate = 1f;
 	[SerializeField] private int damage = 50;
 	private float fireCountdown = 0f;
-
+	
 	private int killCount = 0;
 
 	public LineRenderer lineRenderer;
@@ -129,8 +129,17 @@ public class Turret : MonoBehaviour {
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
 		bullet.SetParent(this);
 		if (bullet != null)
+        {
 			bullet.damage = this.damage;
-		if (title == "Boomerang Bird" || title == "Archwizard") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
+			if (title == "Berserk Bird") 
+			{ 
+				bullet.damage += killCount;
+				Debug.Log(bullet.damage);
+			}
+		}
+		
+		
+		if (title == "Boomerang Bird" || title == "Archwizard" || title == "Berserk Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
 		else
 		{
 			bullet.Seek(target);
