@@ -22,6 +22,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	void Update()
 	{
+		if (enemy.GetIsFrozen()) return;
 		Vector3 dir = target.position - transform.position;
 		transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
 

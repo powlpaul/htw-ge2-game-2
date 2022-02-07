@@ -11412,6 +11412,10 @@ PrefabInstance:
       propertyPath: startLives
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4669064187486661686, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
+      propertyPath: startMoney
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 4710449109955388860, guid: 4ff71a35b17ff094993f1222d1a78ebc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

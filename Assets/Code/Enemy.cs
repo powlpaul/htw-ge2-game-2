@@ -11,12 +11,13 @@ public class Enemy : MonoBehaviour {
 
 	public float startHealth = 100;
 	private float health;
-
+	private bool isFrozen = false;
 	public int worth = 50;
 
 	//public GameObject deathEffect;
 	private float slowTimer = 0;
 	private SlowZone currentSlowZone;
+	private float freezeTimer;
 	[Header("Unity Stuff")]
 	public Image healthBar;
 
@@ -30,8 +31,18 @@ public class Enemy : MonoBehaviour {
     private void Update()
     {
 		slowTimer += Time.deltaTime;
+		freezeTimer += Time.deltaTime;
+		if (freezeTimer > 2.5) isFrozen = false;
 		if (currentSlowZone ==null ||  slowTimer > currentSlowZone.slowDuration) speed = startSpeed;
+
     }
+	public void Freeze()
+    {
+		Debug.Log("I got frozen");
+		isFrozen = true;
+		freezeTimer = 0;
+
+	}
     public void TakeDamage (float amount)
 	{
 		health -= amount;
@@ -85,5 +96,9 @@ public class Enemy : MonoBehaviour {
 	public bool getIsDead()
     {
 		return this.isDead;
+    }
+	public bool GetIsFrozen()
+    {
+		return isFrozen;
     }
 }

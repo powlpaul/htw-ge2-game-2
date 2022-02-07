@@ -130,7 +130,7 @@ public class Turret : MonoBehaviour {
 		bullet.SetParent(this);
 		if (bullet != null)
 			bullet.damage = this.damage;
-		if (title == "Boomerang Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
+		if (title == "Boomerang Bird" || title == "Archwizard") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
 		else
 		{
 			bullet.Seek(target);
