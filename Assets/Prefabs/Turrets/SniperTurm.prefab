@@ -152,7 +152,8 @@ MonoBehaviour:
     upgradeCost: 400
     isSplittingPath: 0
     name: Sniper Bird
-    description: 
+    description: although a veteran the extra battle experience will grant this soldier
+      more range and attack speed
   - range: 60
     damage: 55
     attackSpeed: 0.6
@@ -163,7 +164,8 @@ MonoBehaviour:
     upgradeCost: 500
     isSplittingPath: 0
     name: Sniper Bird
-    description: 
+    description: although a veteran the extra battle experience will grant this soldier
+      more range and attack speed
   - range: 60
     damage: 55
     attackSpeed: 0.7
@@ -174,10 +176,11 @@ MonoBehaviour:
     upgradeCost: 650
     isSplittingPath: 1
     name: Sniper Bird
-    description: 
+    description: although a veteran the extra battle experience will grant this soldier
+      more range and attack speed
   - range: 80
-    damage: 60
-    attackSpeed: 1
+    damage: 500
+    attackSpeed: 0.3
     slowAmount: 0
     slowTime: 0
     slowZoneDuration: 0
@@ -189,7 +192,7 @@ MonoBehaviour:
       deadly trigger in this battle this bird can now hit a sunflower seed from 80
       meters away and will strike with precision. this upgrade will reduce the fire
       rate but greatly increase the damage."
-  - range: 80
+  - range: 500
     damage: 60
     attackSpeed: 1
     slowAmount: 0

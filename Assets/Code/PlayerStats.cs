@@ -5,7 +5,7 @@ public class PlayerStats : MonoBehaviour {
 
 	public static int Money;
 	[SerializeField] private int startMoney = 400;
-
+	public static int score = 0;
 	public static int Lives;
 	[SerializeField] int startLives = 20;
 	public static MenuManager menu;
@@ -26,4 +26,11 @@ public class PlayerStats : MonoBehaviour {
 		menu.UpdateHealth(Lives);
 		menu.NextRound(Rounds);
     }
+
+	public void FinalizeScore()
+    {
+		score += Lives * 100;
+		score += Money * 50;
+    }
+
 }

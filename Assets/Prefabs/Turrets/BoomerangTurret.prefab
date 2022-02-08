@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 485008}
   - component: {fileID: 11422402}
   - component: {fileID: -68527311053861308}
+  - component: {fileID: 4595447922857330426}
   m_Layer: 0
   m_Name: BoomerangTurret
   m_TagString: Tower
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0be04c0c5f4d4b85da0b947019937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 4595447922857330426}
   title: Boomerang Bird
   range: 15
   upgradePath:
@@ -151,6 +152,10 @@ MonoBehaviour:
     bounceAmount: 1
     upgradeCost: 500
     isSplittingPath: 0
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 16
     damage: 70
     attackSpeed: 1.1
@@ -160,6 +165,10 @@ MonoBehaviour:
     bounceAmount: 2
     upgradeCost: 600
     isSplittingPath: 0
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 18
     damage: 100
     attackSpeed: 1.5
@@ -167,8 +176,12 @@ MonoBehaviour:
     slowTime: 0
     slowZoneDuration: 0
     bounceAmount: 3
-    upgradeCost: 0
-    isSplittingPath: 0
+    upgradeCost: 1000
+    isSplittingPath: 1
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 18
     damage: 100
     attackSpeed: 1.5
@@ -178,7 +191,25 @@ MonoBehaviour:
     bounceAmount: 5
     upgradeCost: 0
     isSplittingPath: 0
-  bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
+    name: Berserk Bird
+    description: "\u201CRage gives me strength\u201D tired of the smug smile of the
+      balls this bird is getting increasingly angrier. This upgrade will grant the
+      berserk more strength for each takedown he scores during the round"
+  - range: 18
+    damage: 100
+    attackSpeed: 1.5
+    slowAmount: 0
+    slowTime: 0
+    slowZoneDuration: 0
+    bounceAmount: 5
+    upgradeCost: 0
+    isSplittingPath: 0
+    name: Ninja Bird
+    description: "\u201CThe shadows are my home\u201D \u2013 remembering his time
+      in the cherry blossom Nippon nest this bird has decided to use the way of the
+      ninja to his advantage by having a chance to confuse each enemy hit by his
+      boomerang and making them go back to the start"
+  bulletPrefab: {fileID: 185070, guid: 957b8a8f7addb514e97a6cba831db8a4, type: 3}
   fireRate: 1
   damage: 50
   lineRenderer: {fileID: 0}
@@ -201,6 +232,25 @@ CapsuleCollider:
   m_Height: 1.41
   m_Direction: 1
   m_Center: {x: 0, y: 1.88, z: 0}
+--- !u!95 &4595447922857330426
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174700}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8566257921448803753
 PrefabInstance:
   m_ObjectHideFlags: 0

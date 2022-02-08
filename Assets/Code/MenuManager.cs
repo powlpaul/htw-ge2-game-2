@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyDisplay;
     [SerializeField] private TextMeshProUGUI RoundDisplay;
     [SerializeField] private Button nextRoundButton;
+    [SerializeField] private Button nextRoundButton2;
     [Header("ShopMenu")]
     [SerializeField] private GameObject buyMenu;
     [SerializeField] private TextMeshProUGUI[] birdPrices;
@@ -19,6 +20,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI turretName;
     [SerializeField] private TextMeshProUGUI turretLvL;
     [SerializeField] private TextMeshProUGUI upgradeCostDisplay;
+    [SerializeField] private TextMeshProUGUI upgradeCostDisplay2;
     [SerializeField] private TextMeshProUGUI SellAmountDisplay;
     [SerializeField] private TextMeshProUGUI killCountDisplay;
     [SerializeField] private GameObject upgradeButton1;
@@ -59,8 +61,16 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (WaveSpawner.GetWaveState()) nextRoundButton.interactable = false;
-        else nextRoundButton.interactable = true;
+        if (WaveSpawner.GetWaveState())
+        {
+            nextRoundButton.interactable = false;
+            nextRoundButton2.interactable = false;
+        }
+        else
+        {
+            nextRoundButton.interactable = true;
+            nextRoundButton2.interactable = true;
+        }
 
         if (Input.GetKeyUp(KeyCode.Escape) && !isPauseMenuActive)
         {
@@ -101,6 +111,11 @@ public class MenuManager : MonoBehaviour
     {
         if (Time.timeScale > 1.0) Time.timeScale = 1.0f;
         else Time.timeScale = 3.0f;
+    }
+    public void ToggleBuyMenu()
+    {
+        if(buyMenu.activeInHierarchy) buyMenu.SetActive(false);
+        else buyMenu.SetActive(true);
     }
     public void ShowTurretScreen(Turret tower)
     {
@@ -143,6 +158,7 @@ public class MenuManager : MonoBehaviour
             {
                 upgradeButton2.SetActive(true);
                 upgradeToolTip2.header = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 2).name;
+                upgradeCostDisplay2.text = "" + displayedTurret.GetUpgradeAmount() + "$";
                 upgradeToolTip2.content = displayedTurret.GetLevelStats(displayedTurret.GetCurrentLevel() + 2).description;
             }
             else upgradeButton2.SetActive(false);
@@ -189,6 +205,7 @@ public class MenuManager : MonoBehaviour
         {
             displayedTurret.Upgrade();
             UpdateTurretStatsInDisplay();
+            upgradeToolTip1.UpgradePressed();
         }
         else if (displayedBank != null)
         {
@@ -203,7 +220,8 @@ public class MenuManager : MonoBehaviour
     {
         if (displayedTurret != null)
         {
-            displayedTurret.Upgrade();
+            upgradeToolTip2.UpgradePressed();
+            displayedTurret.UpgradeToSecondPath();
             UpdateTurretStatsInDisplay();
         }
     }
