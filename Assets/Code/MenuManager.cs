@@ -38,6 +38,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bankLevelDisplay;
     [SerializeField] private GameObject bankUpgradeButton1;
     [SerializeField] private GameObject bankUpgradeButton2;
+    [SerializeField] private TooltipTrigger bankUpgradeToolTip1;
+    [SerializeField] private TooltipTrigger bankUpgradeToolTip2;
     [Header("references")]
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject pauseMenu;
@@ -179,7 +181,7 @@ public class MenuManager : MonoBehaviour
     }
     public void UpdateBankStatsInDisplay()
     {
-        bankName.text = "Bird Bank";
+        bankName.text = displayedBank.GetName();
         bankLevelDisplay.text = "LVL " + (displayedBank.GetCurrentLevel() + 1);
         bankSellAmountDisplay.text = displayedBank.GetSellAmount() + "$";
         bankUpgradeCostDisplay.text = displayedBank.GetCurrentStats().upgradeCost + "$";
@@ -188,7 +190,15 @@ public class MenuManager : MonoBehaviour
         if (displayedBank.GetCurrentStats().upgradeCost > 0)
         {
             bankUpgradeButton1.SetActive(true);
-            bankUpgradeButton2.SetActive(displayedBank.GetCurrentStats().isSplittingPath);
+            bankUpgradeToolTip1.header = displayedBank.GetLevelStats(displayedBank.GetCurrentLevel() + 1).title;
+            bankUpgradeToolTip1.content = displayedBank.GetLevelStats(displayedBank.GetCurrentLevel() + 1).description;
+            if (displayedBank.GetCurrentStats().isSplittingPath)
+            {
+                bankUpgradeButton2.SetActive(true);
+                bankUpgradeToolTip2.header = displayedBank.GetLevelStats(displayedBank.GetCurrentLevel() + 2).title;
+                bankUpgradeToolTip2.content = displayedBank.GetLevelStats(displayedBank.GetCurrentLevel() + 2).description;
+            }
+            else bankUpgradeButton2.SetActive(false);
         }
         else
         {
@@ -215,6 +225,7 @@ public class MenuManager : MonoBehaviour
         }
         else if (displayedBank != null)
         {
+            bankUpgradeToolTip1.UpgradePressed();
             displayedBank.Upgrade();
             UpdateBankStatsInDisplay();
         }
@@ -230,6 +241,14 @@ public class MenuManager : MonoBehaviour
             displayedTurret.UpgradeToSecondPath();
             UpdateTurretStatsInDisplay();
         }
+        else if (displayedBank != null)
+        {
+            bankUpgradeToolTip2.UpgradePressed();
+            displayedBank.UpgradeToSecondPath();
+            UpdateBankStatsInDisplay();
+
+        }
+
     }
     public void OnCashOutPressed()
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,7 +59,10 @@ public class Bank : MonoBehaviour
     {
         return upgradePath[currentLevel];
     }
-
+    public BankStats GetLevelStats(int index)
+    {
+        return upgradePath[index];
+    }
     public int GetCurrentLevel()
     {
         return currentLevel;
@@ -88,9 +92,10 @@ public class Bank : MonoBehaviour
         this.maxMoney = upgradePath[currentLevel].maxMoney;
         this.moneyPerTick = upgradePath[currentLevel].moneyPerTick;
         this.interestPercent = upgradePath[currentLevel].interestPercent;
+        if (!string.IsNullOrEmpty(upgradePath[currentLevel].title)) this.name = upgradePath[currentLevel].title;
 
     }
-    public void Upgrade2()
+    public void UpgradeToSecondPath()
     {
         if (PlayerStats.Money - this.upgradePath[currentLevel].upgradeCost < 0 || this.upgradePath[currentLevel].upgradeCost == 0) return;
         PlayerStats.Money -= this.upgradePath[currentLevel].upgradeCost;
@@ -98,10 +103,17 @@ public class Bank : MonoBehaviour
         this.maxMoney = upgradePath[currentLevel].maxMoney;
         this.moneyPerTick = upgradePath[currentLevel].moneyPerTick;
         this.interestPercent = upgradePath[currentLevel].interestPercent;
+        if (!string.IsNullOrEmpty(upgradePath[currentLevel].title)) this.name = upgradePath[currentLevel].title;
 
+    }
+    public String GetName()
+    {
+        return name;
     }
     public void Destroy()
     {
         Destroy(gameObject);
     }
+
+   
 }

@@ -125,23 +125,23 @@ MonoBehaviour:
   - maxMoney: 2000
     moneyPerTick: 100
     interestPercent: 12
-    upgradeCost: 0
+    upgradeCost: 700
     isSplittingPath: 0
     title: Bird Bank
     description: using all kinds of weird calculations and spreadsheets birds are
       able to predict the forces of the free market much better. This upgrade will
       increase the interest, money per turn and the maximum money
   - maxMoney: 2000
-    moneyPerTick: 100
+    moneyPerTick: 150
     interestPercent: 12
-    upgradeCost: 0
+    upgradeCost: 2000
     isSplittingPath: 1
     title: Bird Bank
     description: using all kinds of weird calculations and spreadsheets birds are
       able to predict the forces of the free market much better. This upgrade will
       increase the interest, money per turn and the maximum money
   - maxMoney: 50000
-    moneyPerTick: 100
+    moneyPerTick: 150
     interestPercent: 20
     upgradeCost: 0
     isSplittingPath: 0
