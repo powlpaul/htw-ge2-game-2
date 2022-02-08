@@ -65,7 +65,7 @@ public class Bullet : MonoBehaviour {
 
 		if (nearestEnemy != null && shortestDistance <= 10)
 		{
-			Debug.Log("found nearest enemy");
+			//Debug.Log("found nearest enemy");
 			target = nearestEnemy.transform;
 			//Debug.LogError(target.position.x + " " + target.position.y);
 			bounceAmount--;

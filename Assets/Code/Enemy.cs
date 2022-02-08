@@ -99,7 +99,7 @@ public class Enemy : MonoBehaviour {
 		AudioMaster.AM.PlayEnemyDeathSound();
 		/*GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(effect, 5f);*/
-
+		PlayerStats.score += Mathf.RoundToInt(Waypoints.GetDistanceToEnd(transform, gameObject.GetComponent<EnemyMovement>().GetWayPointIndex()) * worth);
 		if (EnemyAfterDeath == null) WaveSpawner.EnemiesAlive--;
 		else
 		{

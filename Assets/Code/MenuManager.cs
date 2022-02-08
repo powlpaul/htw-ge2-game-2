@@ -43,6 +43,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject winGameScreen;
     [SerializeField] private  Texture2D birdImages;
+    [SerializeField] private string nextScene;
     private bool isPauseMenuActive = false;
     private int maxRounds;
     private Turret displayedTurret;
@@ -291,7 +292,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnNext()
     {
-        SceneManager.LoadScene("Level02");
+        SceneManager.LoadScene(nextScene);
 
         Time.timeScale = 1;
     }

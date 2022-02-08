@@ -5,9 +5,20 @@ public class GameManager : MonoBehaviour {
 
 	public static bool GameIsOver;
 	[SerializeField] private MenuManager menuManager;
+	[SerializeField] private AudioMaster audioMaster;
+
+	private AudioSource[] allAudioSources;
+
+	void Awake()
+	{
+		allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+	}
+
 	void Start ()
 	{
 		GameIsOver = false;
+		StopAllAudio();
+		audioMaster.PlayBackgroundTrack();
 	}
 
 	// Update is called once per frame
@@ -21,6 +32,14 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	void StopAllAudio()
+	{
+		foreach (AudioSource audioS in allAudioSources)
+		{
+			audioS.Stop();
+		}
+	}
+
 	void EndGame ()
 	{
 		menuManager.EndGame();
@@ -31,6 +50,7 @@ public class GameManager : MonoBehaviour {
 
 	public void WinLevel ()
 	{
+		//PlayerStats.
 		menuManager.WinGame();
 		GameIsOver = true;
 		//completeLevelUI.SetActive(true);

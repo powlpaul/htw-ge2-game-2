@@ -139,10 +139,11 @@ public class Turret : MonoBehaviour {
 		}
 		
 		
-		if (title == "Boomerang Bird" || title == "Archwizard" || title == "Berserk Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
+		if (title == "Boomerang Bird" || title == "Archwizard" || title == "Berserk Bird" || title == "Ninja Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
 		else
 		{
 			bullet.Seek(target);
+			AudioMaster.AM.PlayShotSoundEffect();
 		}
 	}
 

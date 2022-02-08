@@ -82,4 +82,8 @@ public class EnemyMovement : MonoBehaviour {
     {
 		return target;
     }
+	public int GetWayPointIndex()
+    {
+		return wavepointIndex;
+    }
 }

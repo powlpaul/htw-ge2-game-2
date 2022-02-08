@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioMaster : MonoBehaviour
-{   
+{
     //this static singleton variable has the goal to make audioClips accesible form anywhere, and the audioClips savable in this space
     public static AudioMaster AM;
 
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private  AudioClip enemyDeathSound;
+    [SerializeField] private AudioClip enemyDeathSound;
     [SerializeField] private AudioClip shotSoundEffect;
     [SerializeField] private AudioClip turretPlacedEffect;
     [SerializeField] private AudioClip turretClickEffect;
+    [SerializeField] private AudioClip backGroundTrack;
+    [SerializeField] private AudioClip boomerangSoundEffect;
     // Start is called before the first frame update
 
     void Awake()
@@ -25,24 +27,34 @@ public class AudioMaster : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void PlayAudioClip()
     {
         Debug.LogError("FUCK");
     }
+
+    public void PlayShotSoundEffect()
+    {
+        audioSource.PlayOneShot(shotSoundEffect, 0.5f);
+    }
     public void PlayEnemyDeathSound()
     {
         audioSource.PlayOneShot(enemyDeathSound, 0.5f);
     }
+
     public void PlayTurretClickSound()
     {
         audioSource.PlayOneShot(turretClickEffect, 1f);
+    }
+
+    public void PlayBackgroundTrack(){
+      audioSource.PlayOneShot(backGroundTrack, 0.5f);
     }
 }
