@@ -12,7 +12,10 @@ public class EnemyMovement : MonoBehaviour {
 	void Start()
 	{
 		enemy = GetComponent<Enemy>();
-
+		if (target != null) {
+			transform.LookAt(target.position);
+			return;
+		}
 		target = Waypoints.points[0];
 		transform.LookAt(target.position);
 	}
@@ -49,5 +52,17 @@ public class EnemyMovement : MonoBehaviour {
 		WaveSpawner.EnemiesAlive--;
 		Destroy(gameObject);
 	}
+	public void SetTarget(Transform newTarget)
+    {
+		target = newTarget;
+		for(int i = 0; i < Waypoints.points.Length; i++)
+        {
+			if (Waypoints.points[i] == newTarget) wavepointIndex = i;
+        }
+    }
 
+	public Transform GetTarget()
+    {
+		return target;
+    }
 }

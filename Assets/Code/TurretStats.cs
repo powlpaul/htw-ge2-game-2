@@ -17,6 +17,10 @@ public class TurretStats
 	public float slowZoneDuration;
 	public int bounceAmount;
 	public int upgradeCost;
+	public bool isSplittingPath;
+	public string name;
+	[TextArea]
+	public string description;
 	public TurretStats(int range, int damage, int attackSpeed, int upgradeCost)
     {
 		this.range = range;

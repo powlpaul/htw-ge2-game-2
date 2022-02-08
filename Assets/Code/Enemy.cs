@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour {
 
 	public float startSpeed = 10f;
 
+	[SerializeField] GameObject EnemyAfterDeath;
 	[HideInInspector]
 	public float speed;
 
@@ -65,13 +66,19 @@ public class Enemy : MonoBehaviour {
 	void Die ()
 	{
 		isDead = true;
-
 		PlayerStats.Money += worth;
-
+		AudioMaster.AM.PlayEnemyDeathSound();
 		/*GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(effect, 5f);*/
 
-		WaveSpawner.EnemiesAlive--;
+		if (EnemyAfterDeath == null) WaveSpawner.EnemiesAlive--;
+		else
+		{
+			GameObject newEnemy = GameObject.Instantiate(EnemyAfterDeath, transform.position, Quaternion.identity);
+			EnemyMovement thisMovement = this.gameObject.GetComponent<EnemyMovement>();
+			EnemyMovement newEnemyMovement = newEnemy.GetComponent<EnemyMovement>();
+			newEnemyMovement.SetTarget(thisMovement.GetTarget());
+		}
 
 		Destroy(gameObject);
 	}

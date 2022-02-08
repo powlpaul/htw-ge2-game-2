@@ -33,7 +33,7 @@ public class Turret : MonoBehaviour {
 	public float turnSpeed = 10f;
 
 	public Transform firePoint;
-
+	public Texture2D previewImage;
     // Use this for initialization
     void Start () {
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -68,7 +68,15 @@ public class Turret : MonoBehaviour {
 		}
 
 	}
-
+	void DamageAllEnemies()
+    {
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+		foreach (GameObject enemy in enemies)
+        {
+			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+			if (distanceToEnemy < range) enemy.GetComponent<Enemy>().TakeDamage(50);
+		}
+	}
 	// Update is called once per frame
 	void Update () {
 		if (target == null)
@@ -132,7 +140,15 @@ public class Turret : MonoBehaviour {
 		this.damage = upgradePath[currentLevel].damage;
 
 	}
-
+	public void UpgradeToSecondPath()
+    {
+		//upgradePath.
+    }
+	public void Sell()
+    {
+		PlayerStats.Money += GetSellAmount();
+		Destroy();
+    }
 	public string GetTitle()
     {
 		return title;
@@ -173,4 +189,8 @@ public class Turret : MonoBehaviour {
     {
 		return upgradePath[currentLevel];
     }
+	public TurretStats GetLevelStats(int index)
+	{
+		return upgradePath[index];
+	}
 }
