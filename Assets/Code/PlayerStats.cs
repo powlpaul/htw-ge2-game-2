@@ -27,10 +27,12 @@ public class PlayerStats : MonoBehaviour {
 		menu.NextRound(Rounds);
     }
 
-	public void FinalizeScore()
+	public static void FinalizeScore()
     {
-		score += Lives * 100;
-		score += Money * 50;
+		Debug.LogError(score);
+		score += Lives * 10;
+		score += Money * 5;
+		Debug.LogError(score);
     }
 
 }

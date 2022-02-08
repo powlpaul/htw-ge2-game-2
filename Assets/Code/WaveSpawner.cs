@@ -54,7 +54,7 @@ public class WaveSpawner : MonoBehaviour {
 	{
 	
 
-		if (waveIndex == waves2.Length)
+		if (waveIndex == waves2.Length+1 )
 		{
 			gameManager.WinLevel();
 			this.enabled = false;
@@ -73,6 +73,12 @@ public class WaveSpawner : MonoBehaviour {
 	}
 	public void StartNextWave()
     {
+		if (waveIndex == waves2.Length )
+		{
+			gameManager.WinLevel();
+			this.enabled = false;
+			return;
+		}
 		AudioMaster.AM.PlayTurretClickSound();
 		isWave = true;
 		Debug.Log("test");
