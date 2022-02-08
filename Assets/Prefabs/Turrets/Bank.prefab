@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2370100103730205078}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7777246897877800955}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1140203107991591138
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -118,26 +118,49 @@ MonoBehaviour:
     interestPercent: 10
     upgradeCost: 500
     isSplittingPath: 0
+    title: Bird Bank
+    description: using all kinds of weird calculations and spreadsheets birds are
+      able to predict the forces of the free market much better. This upgrade will
+      increase the interest, money per turn and the maximum money
   - maxMoney: 2000
     moneyPerTick: 100
     interestPercent: 12
     upgradeCost: 0
     isSplittingPath: 0
+    title: Bird Bank
+    description: using all kinds of weird calculations and spreadsheets birds are
+      able to predict the forces of the free market much better. This upgrade will
+      increase the interest, money per turn and the maximum money
   - maxMoney: 2000
     moneyPerTick: 100
     interestPercent: 12
     upgradeCost: 0
     isSplittingPath: 1
+    title: Bird Bank
+    description: using all kinds of weird calculations and spreadsheets birds are
+      able to predict the forces of the free market much better. This upgrade will
+      increase the interest, money per turn and the maximum money
   - maxMoney: 50000
     moneyPerTick: 100
     interestPercent: 20
     upgradeCost: 0
-    isSplittingPath: 1
+    isSplittingPath: 0
+    title: 'Fledgefund '
+    description: "\u2018\u2019you can\u2019t make money without spending money\u201D
+      \u2013 by using some morally ambiguous tools the birds of this bank successfully
+      created a hedge fund which will generate a lot more money each turn instead
+      of interest"
   - maxMoney: 5000
     moneyPerTick: 500
     interestPercent: 0
     upgradeCost: 0
-    isSplittingPath: 1
+    isSplittingPath: 0
+    title: Birdcoin miner
+    description: "\u201CTrust me it\u2019s not a tree stump scheme\u201D ever since
+      the inception of bird coin everybody is wondering if it is legitimate or just
+      a bubble as the value has seen great surges of the last years. This upgrade
+      will remove the maximum money cap and greatly increase the interest rate."
+  moneyGraphic: {fileID: 1349002919855090268}
 --- !u!1001 &7810628944146640912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,10 +216,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bank
       objectReference: {fileID: 0}
+    - target: {fileID: 9141307402938997324, guid: f4226ef478d09ec45bcb5a0dd0a0ab66, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4226ef478d09ec45bcb5a0dd0a0ab66, type: 3}
 --- !u!4 &7777246897877800955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4226ef478d09ec45bcb5a0dd0a0ab66, type: 3}
+  m_PrefabInstance: {fileID: 7810628944146640912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1349002919855090268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9141307402938997324, guid: f4226ef478d09ec45bcb5a0dd0a0ab66, type: 3}
   m_PrefabInstance: {fileID: 7810628944146640912}
   m_PrefabAsset: {fileID: 0}

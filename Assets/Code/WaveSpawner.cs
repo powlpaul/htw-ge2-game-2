@@ -20,10 +20,10 @@ public class WaveSpawner : MonoBehaviour {
 	[SerializeField] GameObject[] enemies;
 	[SerializeField] SpawningScheme[] spawningSchemes;
 	//public Text waveCountdownText;
-	private static bool isWave = false;
+	[SerializeField] private static bool isWave = false;
 	public GameManager gameManager;
 
-	private int waveIndex = 0;
+	[SerializeField] private int waveIndex = 0;
 
     private void Start()
     {
@@ -54,13 +54,17 @@ public class WaveSpawner : MonoBehaviour {
 	{
 	
 
-		if (waveIndex == waves2.Length+1 )
-		{
-			gameManager.WinLevel();
-			this.enabled = false;
-		}
+	
 		if (isWave && EnemiesAlive == 0)
 		{
+			if (waveIndex == waves2.Length && !GameManager.GameIsOver)
+			{
+				//Debug.Log("you won the game");
+				gameManager.WinLevel();
+				this.enabled = false;
+				return;
+
+			}
 			isWave = false;
 			GameObject[] banks = GameObject.FindGameObjectsWithTag("Bank");
 			foreach(GameObject bank in banks)

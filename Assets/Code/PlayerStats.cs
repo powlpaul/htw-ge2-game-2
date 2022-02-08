@@ -29,10 +29,10 @@ public class PlayerStats : MonoBehaviour {
 
 	public static void FinalizeScore()
     {
-		Debug.LogError(score);
+		Debug.Log(score);
 		score += Lives * 10;
 		score += Money * 5;
-		Debug.LogError(score);
+		Debug.Log(score);
     }
 
 }
