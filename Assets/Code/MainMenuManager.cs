@@ -41,7 +41,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnLevel1()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("DialogueScene");
         mainMenu.SetActive(false);
 
         Time.timeScale = 1;
@@ -49,7 +49,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnLevel2()
     {
-        SceneManager.LoadScene("Level02");
+        SceneManager.LoadScene("DialogueScene2");
         mainMenu.SetActive(false);
 
         Time.timeScale = 1;
