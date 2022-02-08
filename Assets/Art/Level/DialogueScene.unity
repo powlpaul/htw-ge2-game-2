@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -432,6 +432,7 @@ MonoBehaviour:
   blueBirbAnimator: {fileID: 735489159}
   brownBirbAnimator: {fileID: 1779224484}
   endButton: {fileID: 370584939}
+  audioMaster: {fileID: 1613908608}
 --- !u!4 &302673625
 Transform:
   m_ObjectHideFlags: 0
@@ -1757,6 +1758,86 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &1613908607
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.387955
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.742406
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.23246
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164768, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: backGroundTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 41eb4de7001fe4633a1af195f3e5d61c, type: 3}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: enemyDeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fd211ea9fdf2a364f8ccf2cd7fdf3c08, type: 3}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: dialogueBackgroundTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 41eb4de7001fe4633a1af195f3e5d61c, type: 3}
+    - target: {fileID: 5073526656478164774, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_Name
+      value: AudioMaster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+--- !u!114 &1613908608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+  m_PrefabInstance: {fileID: 1613908607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0953d1d258fc0d040805cac2ac794476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1779224479
 GameObject:
   m_ObjectHideFlags: 0

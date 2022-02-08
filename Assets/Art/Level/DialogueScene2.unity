@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &4583483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+  m_PrefabInstance: {fileID: 1331592828}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0953d1d258fc0d040805cac2ac794476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &24558932
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +512,7 @@ MonoBehaviour:
   blueBirbAnimator: {fileID: 735489159}
   brownBirbAnimator: {fileID: 1779224484}
   endButton: {fileID: 808612288}
+  audioMaster: {fileID: 4583483}
 --- !u!4 &302673625
 Transform:
   m_ObjectHideFlags: 0
@@ -1428,6 +1440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: backGroundTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 41eb4de7001fe4633a1af195f3e5d61c, type: 3}
     - target: {fileID: 5073526656478164774, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_Name
       value: AudioMaster
