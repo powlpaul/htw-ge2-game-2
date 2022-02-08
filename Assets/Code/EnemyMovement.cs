@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour {
 	}
 	public void GetPreviousWayPoint()
     {
-		Debug.Log(wavepointIndex);
+		//Debug.Log(wavepointIndex);
 		if (wavepointIndex <= 0)
 		{
 			target = Waypoints.startPosition;
@@ -64,7 +64,7 @@ public class EnemyMovement : MonoBehaviour {
 	}
     void EndPath()
 	{
-		Debug.LogError(wavepointIndex);
+		//Debug.LogError(wavepointIndex);
 		PlayerStats.Lives--;
 		WaveSpawner.EnemiesAlive--;
 		Destroy(gameObject);
