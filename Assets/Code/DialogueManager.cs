@@ -11,10 +11,11 @@ public class DialogueManager : MonoBehaviour
     public Animator ballAnimator;
     public Animator blueBirbAnimator;
     public Animator brownBirbAnimator;
+    [SerializeField] GameObject endButton;
 
     public Queue<string> sentences;
 
-    // Start is called before the first frame update
+   // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
@@ -67,5 +68,6 @@ public class DialogueManager : MonoBehaviour
         ballAnimator.SetBool("ballHasEntered", false);
         blueBirbAnimator.SetBool("blueEntered", false);
         brownBirbAnimator.SetBool("brownEntered", false);
+        endButton.SetActive(true);
     }
 }

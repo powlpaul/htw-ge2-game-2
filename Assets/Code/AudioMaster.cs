@@ -12,6 +12,7 @@ public class AudioMaster : MonoBehaviour
     [SerializeField] private AudioClip shotSoundEffect;
     [SerializeField] private AudioClip turretPlacedEffect;
     [SerializeField] private AudioClip turretClickEffect;
+    [SerializeField] private AudioClip dialogueBackgroundTrack;
     // Start is called before the first frame update
 
     void Awake()
@@ -37,12 +38,18 @@ public class AudioMaster : MonoBehaviour
     {
         Debug.LogError("FUCK");
     }
+
     public void PlayEnemyDeathSound()
     {
         audioSource.PlayOneShot(enemyDeathSound, 0.5f);
     }
+
     public void PlayTurretClickSound()
     {
         audioSource.PlayOneShot(turretClickEffect, 1f);
+    }
+
+    public void PlayDialogueBackgroundTrack(){
+      audioSource.PlayOneShot(dialogueBackgroundTrack, 1f);
     }
 }

@@ -13,5 +13,11 @@ EditorBuildSettings:
     guid: 2ffd5d662ac06fa4c99ba7d4d293ab90
   - enabled: 1
     path: Assets/Art/Level/Level02.unity
-    guid: 297db80eadf59a848ae03a4c7906fe66
+    guid: b56965f6397a34249ae36f92708b293e
+  - enabled: 1
+    path: Assets/Art/Level/DialogueScene.unity
+    guid: 9b1adf190cc2c4e2eba4ecc720751efc
+  - enabled: 1
+    path: Assets/Art/Level/DialogueScene2.unity
+    guid: bea2a929971eb47659a3cf2acd7f5126
   m_configObjects: {}
