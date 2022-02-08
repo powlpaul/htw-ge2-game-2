@@ -72,22 +72,28 @@ public class MenuManager : MonoBehaviour
             nextRoundButton2.interactable = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape) && !isPauseMenuActive)
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
-            buyMenu.SetActive(false);
-            pauseMenu.SetActive(true);
-            isPauseMenuActive = true;
-            Time.timeScale = 0;
+            ShowPauseMenu();
         }
-        else if(Input.GetKeyUp(KeyCode.Escape) && isPauseMenuActive)
+    }
+    public void ShowPauseMenu()
+    {
+        Debug.Log("Escape pressed");
+        if (isPauseMenuActive)
         {
+            buyMenu.SetActive(true);
             pauseMenu.SetActive(false);
             isPauseMenuActive = false;
             Time.timeScale = 1;
-            buyMenu.SetActive(true);
+        } else 
+        {
+            pauseMenu.SetActive(true);
+            isPauseMenuActive = true;
+            Time.timeScale = 0;
+            buyMenu.SetActive(false);
         }
     }
-
     public void Setup(int maxRounds)
     {
         this.maxRounds = maxRounds;

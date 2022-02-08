@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641454, b: 0.57481843, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641395, b: 0.5748181, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2737,6 +2737,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: enemyDeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fd211ea9fdf2a364f8ccf2cd7fdf3c08, type: 3}
     - target: {fileID: 5073526656478164774, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_Name
       value: AudioMaster
@@ -7730,6 +7734,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6592933649045443890, guid: ce1c1438f534244428a19f784c30b262, type: 3}
+      propertyPath: startMoney
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443891, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: audioMaster
       value: 
@@ -7737,6 +7745,10 @@ PrefabInstance:
     - target: {fileID: 6592933649045443894, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: m_Name
       value: GameMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592933649045443895, guid: ce1c1438f534244428a19f784c30b262, type: 3}
+      propertyPath: numOfWaves
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443895, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: spawnPoint
