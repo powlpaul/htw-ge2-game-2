@@ -12,13 +12,32 @@ public class DialogueManager : MonoBehaviour
     public Animator blueBirbAnimator;
     public Animator brownBirbAnimator;
     [SerializeField] GameObject endButton;
+    [SerializeField] AudioMaster audioMaster;
 
     public Queue<string> sentences;
 
-   // Start is called before the first frame update
+    private AudioSource[] allAudioSources;
+
+    void Awake()
+    {
+        allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+    }
+
+
+    // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        StopAllAudio();
+        audioMaster.PlayBackgroundTrack();
+    }
+
+    void StopAllAudio()
+    {
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.Stop();
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)

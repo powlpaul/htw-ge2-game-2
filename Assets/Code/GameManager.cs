@@ -5,9 +5,20 @@ public class GameManager : MonoBehaviour {
 
 	public static bool GameIsOver;
 	[SerializeField] private MenuManager menuManager;
+	[SerializeField] private AudioMaster audioMaster;
+
+	private AudioSource[] allAudioSources;
+
+	void Awake()
+	{
+		allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+	}
+
 	void Start ()
 	{
 		GameIsOver = false;
+		StopAllAudio();
+		audioMaster.PlayBackgroundTrack();
 	}
 
 	// Update is called once per frame
@@ -18,6 +29,14 @@ public class GameManager : MonoBehaviour {
 		if (PlayerStats.Lives <= 0)
 		{
 			EndGame();
+		}
+	}
+
+	void StopAllAudio()
+	{
+		foreach (AudioSource audioS in allAudioSources)
+		{
+			audioS.Stop();
 		}
 	}
 

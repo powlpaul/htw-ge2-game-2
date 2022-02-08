@@ -118,6 +118,7 @@ public class Turret : MonoBehaviour {
 		else
 		{
 			bullet.Seek(target);
+			AudioMaster.AM.PlayShotSoundEffect();
 		}
 	}
 
