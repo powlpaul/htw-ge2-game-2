@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyDisplay;
     [SerializeField] private TextMeshProUGUI RoundDisplay;
     [SerializeField] private Button nextRoundButton;
+    [SerializeField] private Button nextRoundButton2;
     [Header("ShopMenu")]
     [SerializeField] private GameObject buyMenu;
     [SerializeField] private TextMeshProUGUI[] birdPrices;
@@ -59,8 +60,16 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (WaveSpawner.GetWaveState()) nextRoundButton.interactable = false;
-        else nextRoundButton.interactable = true;
+        if (WaveSpawner.GetWaveState())
+        {
+            nextRoundButton.interactable = false;
+            nextRoundButton2.interactable = false;
+        }
+        else
+        {
+            nextRoundButton.interactable = true;
+            nextRoundButton2.interactable = true;
+        }
 
         if (Input.GetKeyUp(KeyCode.Escape) && !isPauseMenuActive)
         {
@@ -101,6 +110,11 @@ public class MenuManager : MonoBehaviour
     {
         if (Time.timeScale > 1.0) Time.timeScale = 1.0f;
         else Time.timeScale = 3.0f;
+    }
+    public void ToggleBuyMenu()
+    {
+        if(buyMenu.activeInHierarchy) buyMenu.SetActive(false);
+        else buyMenu.SetActive(true);
     }
     public void ShowTurretScreen(Turret tower)
     {
