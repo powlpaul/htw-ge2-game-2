@@ -6,9 +6,8 @@ public class EnemyMovement : MonoBehaviour {
 
 	private Transform target;
 	private int wavepointIndex = 0;
-
 	private Enemy enemy;
-
+	//startPosition 
 	void Start()
 	{
 		enemy = GetComponent<Enemy>();
@@ -28,15 +27,16 @@ public class EnemyMovement : MonoBehaviour {
 
 		if (Vector3.Distance(transform.position, target.position) <= 0.4f)
 		{
-			GetNextWaypoint();
+			if (!enemy.GetIsConfused()) GetNextWaypoint();
+			else GetPreviousWayPoint();
 			
-			transform.LookAt(target.position);
 		}
 
 	}
 
-	void GetNextWaypoint()
+	public void GetNextWaypoint()
 	{
+    
 		if (wavepointIndex >= Waypoints.points.Length - 1)
 		{
 			EndPath();
@@ -45,10 +45,26 @@ public class EnemyMovement : MonoBehaviour {
 
 		wavepointIndex++;
 		target = Waypoints.points[wavepointIndex];
+		transform.LookAt(target.position);
 	}
-
+	public void GetPreviousWayPoint()
+    {
+		Debug.Log(wavepointIndex);
+		if (wavepointIndex <= 0)
+		{
+			target = Waypoints.startPosition;
+			wavepointIndex = -1;
+		}
+		else
+		{
+			wavepointIndex--;
+			target = Waypoints.points[wavepointIndex];
+		}
+		transform.LookAt(target.position);
+	}
     void EndPath()
 	{
+		Debug.LogError(wavepointIndex);
 		PlayerStats.Lives--;
 		WaveSpawner.EnemiesAlive--;
 		Destroy(gameObject);
