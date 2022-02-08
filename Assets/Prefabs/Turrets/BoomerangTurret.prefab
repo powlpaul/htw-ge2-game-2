@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 485008}
   - component: {fileID: 11422402}
   - component: {fileID: -68527311053861308}
+  - component: {fileID: 4595447922857330426}
   m_Layer: 0
   m_Name: BoomerangTurret
   m_TagString: Tower
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0be04c0c5f4d4b85da0b947019937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 4595447922857330426}
   title: Boomerang Bird
   range: 15
   upgradePath:
@@ -208,7 +209,7 @@ MonoBehaviour:
       in the cherry blossom Nippon nest this bird has decided to use the way of the
       ninja to his advantage by having a chance to confuse each enemy hit by his
       boomerang and making them go back to the start"
-  bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
+  bulletPrefab: {fileID: 185070, guid: 957b8a8f7addb514e97a6cba831db8a4, type: 3}
   fireRate: 1
   damage: 50
   lineRenderer: {fileID: 0}
@@ -231,6 +232,25 @@ CapsuleCollider:
   m_Height: 1.41
   m_Direction: 1
   m_Center: {x: 0, y: 1.88, z: 0}
+--- !u!95 &4595447922857330426
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174700}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8566257921448803753
 PrefabInstance:
   m_ObjectHideFlags: 0
