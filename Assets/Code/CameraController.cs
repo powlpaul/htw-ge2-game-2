@@ -19,7 +19,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector3 zoomAmount;
     [SerializeField] private Vector3 newPosition;
     private Vector3 newZoom;
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +52,12 @@ public class CameraController : MonoBehaviour
         {
             newPosition += (transform.right * movementSpeed);
         }
+        newPosition.x = Mathf.Max(0,Mathf.Min(newPosition.x, 90));
+        newPosition.z = Mathf.Min(-20, Mathf.Max(newPosition.z, -130));
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * movementTime);
-
+   
         newZoom += zoomAmount * Input.mouseScrollDelta.y;
-
+        if(newZoom.y < 10 || newZoom.y > 70) newZoom -= zoomAmount * Input.mouseScrollDelta.y;
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * movementTime);
     }
 }

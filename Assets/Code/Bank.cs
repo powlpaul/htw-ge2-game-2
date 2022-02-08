@@ -8,12 +8,14 @@ public class Bank : MonoBehaviour
     [SerializeField] private int maxMoney = 0;
     [SerializeField] private int moneyPerTick = 0;
     [SerializeField] private int interestPercent = 0;
-    [SerializeField] private float tickTime = 0;
-
+    private int gainedMoney =0;
+    [SerializeField] private BankStats[] upgradePath;
+    private int currentLevel = 0;
     private float count;
     void Start()
     {
         Initialize();
+        Debug.Log(CalcMoney(2));
     }
     // Update is called once per frame
     void Update()
@@ -22,6 +24,11 @@ public class Bank : MonoBehaviour
         
 
         
+    }
+    private float CalcMoney(int depth)
+    {
+        if (depth == 1) return moneyPerTick;
+        else return moneyPerTick + CalcMoney(depth - 1) * 1.1f;
     }
     public void OnMouseDown()
     {
@@ -46,17 +53,41 @@ public class Bank : MonoBehaviour
     {
         return (int)count;
     }
+    public  BankStats GetCurrentStats()
+    {
+        return upgradePath[currentLevel];
+    }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
+    public int GetGainedMoney()
+    {
+        return gainedMoney;
+    }
     public void Sell()
     {
         PlayerStats.Money += 400 + (int)count;
+        Destroy(gameObject);
     }
     public void CashOut()
     {
         PlayerStats.Money += Mathf.RoundToInt(count);
+        gainedMoney += Mathf.RoundToInt(count);
         count = 0;
 
     }
+    public void Upgrade()
+    {
+        if (PlayerStats.Money - this.upgradePath[currentLevel].upgradeCost < 0 || this.upgradePath[currentLevel].upgradeCost == 0) return;
+        PlayerStats.Money -= this.upgradePath[currentLevel].upgradeCost;
+        currentLevel++;
+        this.maxMoney = upgradePath[currentLevel].maxMoney;
+        this.moneyPerTick = upgradePath[currentLevel].moneyPerTick;
+        this.interestPercent = upgradePath[currentLevel].interestPercent;
 
+    }
     public void Destroy()
     {
         Destroy(gameObject);

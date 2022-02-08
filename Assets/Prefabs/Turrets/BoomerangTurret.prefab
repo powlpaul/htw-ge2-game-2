@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128360}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.713, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 482280}
-  - {fileID: 4899521216026840613}
+  - {fileID: 8172853878160202306}
   m_Father: {fileID: 485008}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 3.14, z: 1.65}
+  m_LocalPosition: {x: 1.278, y: 3.14, z: 0.904}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 454316}
@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: 0.75, z: -10}
+  m_LocalPosition: {x: 35, y: 0, z: -10}
   m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
   m_Children:
   - {fileID: 454316}
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0be04c0c5f4d4b85da0b947019937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   title: Boomerang Bird
   range: 15
   upgradePath:
@@ -149,6 +150,11 @@ MonoBehaviour:
     slowZoneDuration: 0
     bounceAmount: 1
     upgradeCost: 500
+    isSplittingPath: 0
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 16
     damage: 70
     attackSpeed: 1.1
@@ -157,6 +163,11 @@ MonoBehaviour:
     slowZoneDuration: 0
     bounceAmount: 2
     upgradeCost: 600
+    isSplittingPath: 0
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 18
     damage: 100
     attackSpeed: 1.5
@@ -164,7 +175,12 @@ MonoBehaviour:
     slowTime: 0
     slowZoneDuration: 0
     bounceAmount: 3
-    upgradeCost: 0
+    upgradeCost: 1000
+    isSplittingPath: 1
+    name: Boomerang Bird
+    description: Surprisingly there is a lot to learn about boomerangs. With this
+      upgrade the bird will learn to use his tool more effectively and the boomerang
+      will bounce more.
   - range: 18
     damage: 100
     attackSpeed: 1.5
@@ -173,6 +189,25 @@ MonoBehaviour:
     slowZoneDuration: 0
     bounceAmount: 5
     upgradeCost: 0
+    isSplittingPath: 0
+    name: Berserk Bird
+    description: "\u201CRage gives me strength\u201D tired of the smug smile of the
+      balls this bird is getting increasingly angrier. This upgrade will grant the
+      berserk more strength for each takedown he scores during the round"
+  - range: 18
+    damage: 100
+    attackSpeed: 1.5
+    slowAmount: 0
+    slowTime: 0
+    slowZoneDuration: 0
+    bounceAmount: 5
+    upgradeCost: 0
+    isSplittingPath: 0
+    name: Ninja Bird
+    description: "\u201CThe shadows are my home\u201D \u2013 remembering his time
+      in the cherry blossom Nippon nest this bird has decided to use the way of the
+      ninja to his advantage by having a chance to confuse each enemy hit by his
+      boomerang and making them go back to the start"
   bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
   fireRate: 1
   damage: 50
@@ -181,6 +216,7 @@ MonoBehaviour:
   partToRotate: {fileID: 454316}
   turnSpeed: 10
   firePoint: {fileID: 482280}
+  previewImage: {fileID: 2800000, guid: 352f3f639ae5bc64a814887b981b93b6, type: 3}
 --- !u!136 &-68527311053861308
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -195,77 +231,65 @@ CapsuleCollider:
   m_Height: 1.41
   m_Direction: 1
   m_Center: {x: 0, y: 1.88, z: 0}
---- !u!1001 &4932604785824655822
+--- !u!1001 &8566257921448803753
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 454316}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
+    - target: {fileID: 919132149155446097, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_Name
-      value: BirbFighter
+      value: AussieBirb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
---- !u!4 &4899521216026840613 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
+--- !u!4 &8172853878160202306 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2fea676673a53124d87cd60d0a72baac, type: 3}
-  m_PrefabInstance: {fileID: 4932604785824655822}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
+  m_PrefabInstance: {fileID: 8566257921448803753}
   m_PrefabAsset: {fileID: 0}

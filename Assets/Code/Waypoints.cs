@@ -3,7 +3,7 @@ using UnityEngine;
 public class Waypoints : MonoBehaviour {
 
 	public static Transform[] points;
-
+	public static Transform startPosition;
 	void Awake ()
 	{
 		points = new Transform[transform.childCount];
@@ -11,6 +11,7 @@ public class Waypoints : MonoBehaviour {
 		{
 			points[i] = transform.GetChild(i);
 		}
+		startPosition = GameObject.Find("START").transform;
 	}
 
 }

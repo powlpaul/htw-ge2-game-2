@@ -18,6 +18,7 @@ public class WaveSpawner : MonoBehaviour {
 	[SerializeField] Vector2 waveSizeMinMax;
 	[SerializeField] Vector2 waveRateMinMax;
 	[SerializeField] GameObject[] enemies;
+	[SerializeField] SpawningScheme[] spawningSchemes;
 	//public Text waveCountdownText;
 	private static bool isWave = false;
 	public GameManager gameManager;
@@ -37,11 +38,16 @@ public class WaveSpawner : MonoBehaviour {
 
 		for(int i = 0;i < numOfWaves; i++)
         {
-			waves2[i] = new Wave(
-				enemies[0],
-				(int) Mathf.Lerp(waveSizeMinMax.x, waveSizeMinMax.y,(float) i / numOfWaves), 
-				Mathf.Lerp(waveRateMinMax.x, waveRateMinMax.y,(float) i / numOfWaves)
-			);
+			Wave newWave = new Wave();
+			foreach(SpawningScheme spawningScheme in spawningSchemes)
+            {
+				if(i >= spawningScheme.startWave && i <= spawningScheme.finalWave)newWave.enemiesInWave.Add(new EnemyInWave(
+					spawningScheme.enemy,
+					(int) Mathf.Lerp(spawningScheme.minMaxAmount.x, spawningScheme.minMaxAmount.y,(float) (i - spawningScheme.startWave) / (spawningScheme.finalWave - spawningScheme.startWave)),
+					0.5f
+					));
+            }
+			waves2[i] = newWave;
         }
     }
     void Update ()
@@ -67,9 +73,11 @@ public class WaveSpawner : MonoBehaviour {
 	}
 	public void StartNextWave()
     {
+		AudioMaster.AM.PlayTurretClickSound();
 		isWave = true;
 		Debug.Log("test");
-		StartCoroutine(SpawnWave());
+		StartCoroutine(SpawnWave2());
+		//SpawnWave2();
 		
 	}
 
@@ -77,23 +85,38 @@ public class WaveSpawner : MonoBehaviour {
     {
 		return isWave;
     }
-	IEnumerator SpawnWave ()
-	{
+
+	IEnumerator SpawnWave2()
+    {
 		PlayerStats.Rounds++;
 
 		Wave wave = waves2[waveIndex];
 
-		EnemiesAlive = wave.count;
+		EnemiesAlive = wave.GetCount();
 
-		for (int i = 0; i < wave.count; i++)
-		{
-			SpawnEnemy(wave.enemy);
-			yield return new WaitForSeconds(1f / wave.rate);
+		foreach (EnemyInWave enemyInWave in wave.enemiesInWave)
+        {
+			StartCoroutine(SpawnEnemy2(enemyInWave.enemy, enemyInWave.count));
+			yield return new WaitForSeconds(0.5f);
 		}
+
+			//while(isWave)
+			//SpawnEnemy(wave.enemy);
+		
+		//}
 
 		waveIndex++;
 	}
 
+	IEnumerator SpawnEnemy2(GameObject enemy, int amount)
+    {
+		for(int i = 0; i < amount; i++)
+        {
+			Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+			yield return new WaitForSeconds(1f);
+		}
+		
+	}
 	void SpawnEnemy (GameObject enemy)
 	{
 		Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);

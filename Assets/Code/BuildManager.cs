@@ -56,6 +56,7 @@ public class BuildManager : MonoBehaviour {
 	}
 	public void ChangeTurretOnClick(int index)
     {
+		AudioMaster.AM.PlayTurretClickSound();
 		turretToBuild = allTurrets[index];
     }
 	public int GetTurretCost(int index)

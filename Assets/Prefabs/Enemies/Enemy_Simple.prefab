@@ -61,9 +61,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 10
+  EnemyAfterDeath: {fileID: 0}
   speed: 10
   startHealth: 100
-  worth: 20
+  worth: 10
   healthBar: {fileID: 114000010702059108}
 --- !u!114 &114000011600303422
 MonoBehaviour:

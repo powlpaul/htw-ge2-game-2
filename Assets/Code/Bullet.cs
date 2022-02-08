@@ -65,7 +65,7 @@ public class Bullet : MonoBehaviour {
 
 		if (nearestEnemy != null && shortestDistance <= 10)
 		{
-
+			Debug.Log("found nearest enemy");
 			target = nearestEnemy.transform;
 			//Debug.LogError(target.position.x + " " + target.position.y);
 			bounceAmount--;
@@ -121,6 +121,8 @@ public class Bullet : MonoBehaviour {
 		{
 			e.TakeDamage(damage);
 			if (e.getIsDead()) parent.IncrementKillCount();
+			if (parent.GetTitle() == "Ice Wizard") e.Freeze();
+			if (parent.GetTitle() == "Ninja Bird" && Random.Range(0, 100) > 80f) e.Confuse();
 		}
 	}
 
