@@ -3,7 +3,12 @@ guid: 0953d1d258fc0d040805cac2ac794476
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - enemyDeathSound: {instanceID: 0}
+  - shotSoundEffect: {instanceID: 0}
+  - turretPlacedEffect: {instanceID: 0}
+  - turretClickEffect: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
