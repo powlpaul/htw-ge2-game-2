@@ -314,6 +314,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 465644, guid: 851230bc3ae7a7f47a465c2a34e1611f, type: 3}
   m_PrefabInstance: {fileID: 42799006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &48598946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9165376039954181062, guid: 0684cbb9683824b1b8d6b81d93e837fa, type: 3}
+  m_PrefabInstance: {fileID: 34642206428045424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50423ea560a2db4409963252e11239a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &49063378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10596,6 +10607,14 @@ PrefabInstance:
     - target: {fileID: 4661449653324942305, guid: 0684cbb9683824b1b8d6b81d93e837fa, type: 3}
       propertyPath: m_Name
       value: GameMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661449653324942308, guid: 0684cbb9683824b1b8d6b81d93e837fa, type: 3}
+      propertyPath: menuManager
+      value: 
+      objectReference: {fileID: 48598946}
+    - target: {fileID: 4661449653324942309, guid: 0684cbb9683824b1b8d6b81d93e837fa, type: 3}
+      propertyPath: startLives
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4661449653324942311, guid: 0684cbb9683824b1b8d6b81d93e837fa, type: 3}
       propertyPath: m_RootOrder
