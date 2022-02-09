@@ -2086,6 +2086,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: backGroundTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: a4b0857493fb9491fa263f32d309c6e3, type: 3}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: enemyDeathSound
       value: 
       objectReference: {fileID: 8300000, guid: fd211ea9fdf2a364f8ccf2cd7fdf3c08, type: 3}
@@ -2100,6 +2104,18 @@ PrefabInstance:
     - target: {fileID: 5073526656478164774, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_Name
       value: AudioMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a4b0857493fb9491fa263f32d309c6e3, type: 3}
+    - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
@@ -7516,6 +7532,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443890, guid: ce1c1438f534244428a19f784c30b262, type: 3}
+      propertyPath: startLives
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592933649045443890, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: startMoney
       value: 1000
       objectReference: {fileID: 0}
@@ -7529,7 +7549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443895, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: numOfWaves
-      value: 40
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443895, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: spawnPoint

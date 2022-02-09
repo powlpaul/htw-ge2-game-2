@@ -245,6 +245,7 @@ MonoBehaviour:
   optionMenu: {fileID: 733648185}
   MusicVolumeDisplay: {fileID: 1836159484}
   EffectsVolumeDisplay: {fileID: 566946951}
+  am: {fileID: 528285114}
   holder: {fileID: 1020059074}
 --- !u!1 &24122308
 GameObject:
@@ -1500,6 +1501,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5073526656478164774, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
   m_PrefabInstance: {fileID: 900786335}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &528285114 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+  m_PrefabInstance: {fileID: 900786335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528285112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0953d1d258fc0d040805cac2ac794476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &528285116
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2460,14 +2472,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: backGroundTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: a1e90961df5f34468b79b09b11a9c493, type: 3}
     - target: {fileID: 5073526656478164774, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_Name
       value: AudioMaster
       objectReference: {fileID: 0}
     - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 41eb4de7001fe4633a1af195f3e5d61c, type: 3}
+      objectReference: {fileID: 8300000, guid: a1e90961df5f34468b79b09b11a9c493, type: 3}
+    - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
 --- !u!1 &1020059073
