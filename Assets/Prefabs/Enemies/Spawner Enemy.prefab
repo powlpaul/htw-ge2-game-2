@@ -60,11 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f36604d5db50484e9202ccb5aadd320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 5
+  startSpeed: 4
   EnemyAfterDeath: {fileID: 146912, guid: e27bb2f85e38d094a9a663224345bc3c, type: 3}
   speed: 10
-  startHealth: 500
-  worth: 20
+  startHealth: 4000
+  worth: 100
   healthBar: {fileID: 114000010702059108}
 --- !u!114 &114000011600303422
 MonoBehaviour:
