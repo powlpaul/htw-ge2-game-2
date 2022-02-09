@@ -2475,7 +2475,7 @@ PrefabInstance:
     - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: backGroundTrack
       value: 
-      objectReference: {fileID: 8300000, guid: a1e90961df5f34468b79b09b11a9c493, type: 3}
+      objectReference: {fileID: 8300000, guid: dc93ff078a4b042308b67cf931fedc2a, type: 3}
     - target: {fileID: 5073526656478164774, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_Name
       value: AudioMaster
@@ -2487,7 +2487,7 @@ PrefabInstance:
     - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: a1e90961df5f34468b79b09b11a9c493, type: 3}
+      objectReference: {fileID: 8300000, guid: dc93ff078a4b042308b67cf931fedc2a, type: 3}
     - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1

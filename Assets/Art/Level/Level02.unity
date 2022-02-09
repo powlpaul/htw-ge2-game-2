@@ -1600,7 +1600,7 @@ PrefabInstance:
     - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: backGroundTrack
       value: 
-      objectReference: {fileID: 8300000, guid: 1df39fe3d6aba48d383ef9dc0eae49ad, type: 3}
+      objectReference: {fileID: 8300000, guid: 782883ff762a24d038d92838f2c259a8, type: 3}
     - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: enemyDeathSound
       value: 
@@ -1624,7 +1624,7 @@ PrefabInstance:
     - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 1df39fe3d6aba48d383ef9dc0eae49ad, type: 3}
+      objectReference: {fileID: 8300000, guid: 782883ff762a24d038d92838f2c259a8, type: 3}
     - target: {fileID: 5073526656478164775, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
