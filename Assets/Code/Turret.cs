@@ -143,22 +143,35 @@ public class Turret : MonoBehaviour {
 				Debug.Log(bullet.damage);
 			}
 		}
-		
-		if(title == "Boomerang Bird")
+
+        switch (title)
         {
-			bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
-			AudioMaster.AM.PlayBoomerangTrack();
+			case "Boomerang Bird":
+				AudioMaster.AM.PlayBoomerangTrack();
+				break;
+
+			case "Wizard Bird":
+				AudioMaster.AM.PlayWizardTrack();
+				break;
+
+			case "Berserk Bird":
+				AudioMaster.AM.PlayBoomerangTrack();
+				break;
+
+			case "Archwizard":
+				AudioMaster.AM.PlayWizardTrack();
+				break;
+
+			default:
+				AudioMaster.AM.PlayShotSoundEffect();
+				break;
 		}
-		else if(title == "Wizard Bird")
-        {
-			bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
-			AudioMaster.AM.PlayWizardTrack();
-		}
-		else if (title == "Berserk Bird" || title == "Ninja Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
+
+
+		if (title == "Boomerang Bird" || title == "Archwizard" || title == "Berserk Bird" || title == "Ninja Bird") bullet.Seek(target, upgradePath[currentLevel].bounceAmount);
 		else
 		{
 			bullet.Seek(target);
-			AudioMaster.AM.PlayShotSoundEffect();
 		}
 	}
 

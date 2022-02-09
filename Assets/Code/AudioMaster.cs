@@ -97,7 +97,9 @@ public class AudioMaster : MonoBehaviour
     }
 
     public void PlayBackgroundTrack(){
-      audioSource.PlayOneShot(backGroundTrack, 0.5f);
+        audioSource.loop = true;
+        audioSource.clip = backGroundTrack;
+        audioSource.Play();
     }
 
     public void PlayBoomerangTrack()

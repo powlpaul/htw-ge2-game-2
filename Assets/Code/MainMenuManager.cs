@@ -11,21 +11,36 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject optionMenu;
     [SerializeField] private Text MusicVolumeDisplay;
     [SerializeField] private Text EffectsVolumeDisplay;
+    [SerializeField] private AudioMaster am;
 
-    private AudioMaster am;
+    private AudioSource[] allAudioSources;
+
     public SoundValueHolder holder;
     private int MusicVolume = 10;
     private int EffectsVolume = 10;
 
+    void Awake()
+    {
+        allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+    }
+
     void Start()
     {
-        am = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
-
         holder = GameObject.Find("SoundValueHolder").GetComponent<SoundValueHolder>();
         MusicVolume = (int)(PlayerPrefs.GetFloat("MusicVolumeScale", 1) * 10);
         EffectsVolume = (int)(PlayerPrefs.GetFloat("EffectsVolumeScale", 1) * 10);
         MusicVolumeDisplay.text = "" + MusicVolume;
         EffectsVolumeDisplay.text = "" + EffectsVolume;
+        StopAllAudio();
+        am.PlayBackgroundTrack();
+    }
+
+    void StopAllAudio()
+    {
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.Stop();
+        }
     }
 
     public void OnStart()
