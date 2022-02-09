@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour {
 		Debug.Log(score);
 		score += Lives * 10;
 		score += Money * 5;
+		menu.ShowFinalScore(score);
 		Debug.Log(score);
     }
 

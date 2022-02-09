@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthDisplay;
     [SerializeField] private TextMeshProUGUI moneyDisplay;
     [SerializeField] private TextMeshProUGUI RoundDisplay;
+    [SerializeField] private Text Score;
     [SerializeField] private Button nextRoundButton;
     [SerializeField] private Button nextRoundButton2;
     [Header("ShopMenu")]
@@ -108,6 +109,10 @@ public class MenuManager : MonoBehaviour
     public void UpdateMoney(int newMoney)
     {
         moneyDisplay.text = "" + newMoney;
+    }
+    public void ShowFinalScore(int finalScore)
+    {
+        Score.text = "" + finalScore;
     }
     public void NextRound(int roundNumber)
     {
@@ -311,8 +316,6 @@ public class MenuManager : MonoBehaviour
     public void OnQuit()
     {
         SceneManager.LoadScene("MainMenu");
-
-        Time.timeScale = 0;
     }
 
     public void OnNext()
@@ -325,7 +328,5 @@ public class MenuManager : MonoBehaviour
     public void OnFinish()
     {
         SceneManager.LoadScene("MainMenu");
-
-        Time.timeScale = 0;
     }
 }

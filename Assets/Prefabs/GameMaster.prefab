@@ -2260,6 +2260,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576008178952944480, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
+      propertyPath: Score
+      value: 
+      objectReference: {fileID: 8661221005421619803}
+    - target: {fileID: 4576008178952944480, guid: e27f0aa884a45c74c87a22e01d9bf483, type: 3}
       propertyPath: bankMenu
       value: 
       objectReference: {fileID: 410376360990169140}

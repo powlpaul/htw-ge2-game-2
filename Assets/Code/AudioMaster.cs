@@ -14,6 +14,7 @@ public class AudioMaster : MonoBehaviour
     [SerializeField] private AudioClip turretClickEffect;
     [SerializeField] private AudioClip backGroundTrack;
     [SerializeField] private AudioClip boomerangSoundEffect;
+    [SerializeField] private AudioClip wizardSoundEffect;
 
     private AudioSource musicAudioSource;
     private AudioSource effectAudioSource;
@@ -97,5 +98,15 @@ public class AudioMaster : MonoBehaviour
 
     public void PlayBackgroundTrack(){
       audioSource.PlayOneShot(backGroundTrack, 0.5f);
+    }
+
+    public void PlayBoomerangTrack()
+    {
+        audioSource.PlayOneShot(boomerangSoundEffect, 0.5f);
+    }
+
+    public void PlayWizardTrack()
+    {
+        audioSource.PlayOneShot(wizardSoundEffect, 0.5f);
     }
 }

@@ -2089,6 +2089,14 @@ PrefabInstance:
       propertyPath: enemyDeathSound
       value: 
       objectReference: {fileID: 8300000, guid: fd211ea9fdf2a364f8ccf2cd7fdf3c08, type: 3}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: wizardSoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b1cfa13cd13647bfa3734cbe6fd8473, type: 3}
+    - target: {fileID: 5073526656478164769, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
+      propertyPath: boomerangSoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 811631aab787041ceb12069758d9c00a, type: 3}
     - target: {fileID: 5073526656478164774, guid: 7f269ba657516448fbf226a4b51f493d, type: 3}
       propertyPath: m_Name
       value: AudioMaster
