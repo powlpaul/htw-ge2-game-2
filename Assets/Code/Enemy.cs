@@ -50,9 +50,12 @@ public class Enemy : MonoBehaviour {
 	}
 	public void Confuse()
     {
+		confuseTimer = 0;
+		if (isConfused) return;
 		Debug.Log("I got confused");
 		isConfused = true;
-		confuseTimer = 0;
+
+		
 		gameObject.GetComponent<EnemyMovement>().GetPreviousWayPoint();
     }
 	public void Unconfuse()

@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0be04c0c5f4d4b85da0b947019937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4595447922857330426}
+  animator: {fileID: 7590102350909922566}
   title: Boomerang Bird
   range: 15
   upgradePath:
@@ -251,6 +251,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &7590102350909922566
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800068720599351544}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f6a04fe03dc94a5d897a9699d460835, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8566257921448803753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,12 +321,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4770488875427740883, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.20982075
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
       propertyPath: m_Name
       value: AussieBirb
       objectReference: {fileID: 0}
+    - target: {fileID: 4573297049132677672, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.7390871
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
+--- !u!1 &8800068720599351544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
+  m_PrefabInstance: {fileID: 8566257921448803753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8172853878160202306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}

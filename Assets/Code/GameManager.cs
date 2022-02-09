@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
 
 	public void WinLevel ()
 	{
-		//PlayerStats.
+		PlayerStats.FinalizeScore();
 		menuManager.WinGame();
 		GameIsOver = true;
 		//completeLevelUI.SetActive(true);
