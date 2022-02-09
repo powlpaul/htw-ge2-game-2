@@ -14,15 +14,13 @@ public class Node : MonoBehaviour {
 	[HideInInspector]
 	public bool isUpgraded = false;
 
-	private Renderer rend;
-	private Color startColor;
+
 
 	BuildManager buildManager;
 
 	void Start ()
 	{
-		rend = GetComponent<Renderer>();
-		startColor = rend.material.color;
+
 
 		buildManager = BuildManager.instance;
     }
