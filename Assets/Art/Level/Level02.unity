@@ -3951,7 +3951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443890, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: startLives
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443890, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: startMoney
@@ -3967,7 +3967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443895, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: numOfWaves
-      value: 1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6592933649045443895, guid: ce1c1438f534244428a19f784c30b262, type: 3}
       propertyPath: spawnPoint
