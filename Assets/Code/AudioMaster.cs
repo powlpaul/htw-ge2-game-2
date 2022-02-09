@@ -14,6 +14,12 @@ public class AudioMaster : MonoBehaviour
     [SerializeField] private AudioClip turretClickEffect;
     [SerializeField] private AudioClip backGroundTrack;
     [SerializeField] private AudioClip boomerangSoundEffect;
+
+    private AudioSource musicAudioSource;
+    private AudioSource effectAudioSource;
+    private SoundValueHolder holder;
+    private float effectsVolumeScale = 1f;
+    private float musicVolumeScale = 1f;
     // Start is called before the first frame update
 
     void Awake()
@@ -27,13 +33,48 @@ public class AudioMaster : MonoBehaviour
     }
     void Start()
     {
-
+        AudioSource[] soundSources = GetComponents<AudioSource>();
+        musicAudioSource = soundSources[0];
+        effectAudioSource = soundSources[1];
+        musicVolumeScale = PlayerPrefs.GetFloat("MusicVolumeScale", 1);
+        effectsVolumeScale = PlayerPrefs.GetFloat("EffectsVolumeScale", 1);
     }
 
     // Update is called once per frame
     void Update()
     {
+        musicAudioSource.volume = musicVolumeScale;
+        effectAudioSource.volume = effectsVolumeScale;
+    }
 
+    public void SetEffectsVolumeScale(int value)
+    {
+        effectsVolumeScale = value / 10f;
+    }
+
+    public void SetEffectsVolumeScale(float scale)
+    {
+        effectsVolumeScale = scale;
+    }
+
+    public float GetEffectsVolumeScale()
+    {
+        return effectsVolumeScale;
+    }
+    public void SetMusicVolumeScale(int value)
+    {
+        musicVolumeScale = value / 10f;
+        Debug.Log(musicVolumeScale);
+    }
+
+    public void SetMusicVolumeScale(float scale)
+    {
+        musicVolumeScale = scale;
+    }
+
+    public float GetMusicVolumeScale()
+    {
+        return musicVolumeScale;
     }
     public void PlayAudioClip()
     {

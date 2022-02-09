@@ -2,12 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject levelSelection;
     [SerializeField] GameObject optionMenu;
+    [SerializeField] private Text MusicVolumeDisplay;
+    [SerializeField] private Text EffectsVolumeDisplay;
+
+    private AudioMaster am;
+    public SoundValueHolder holder;
+    private int MusicVolume = 10;
+    private int EffectsVolume = 10;
+
+    void Start()
+    {
+        am = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
+
+        holder = GameObject.Find("SoundValueHolder").GetComponent<SoundValueHolder>();
+        MusicVolume = (int)(PlayerPrefs.GetFloat("MusicVolumeScale", 1) * 10);
+        EffectsVolume = (int)(PlayerPrefs.GetFloat("EffectsVolumeScale", 1) * 10);
+        MusicVolumeDisplay.text = "" + MusicVolume;
+        EffectsVolumeDisplay.text = "" + EffectsVolume;
+    }
 
     public void OnStart()
     {
@@ -53,5 +72,42 @@ public class MainMenuManager : MonoBehaviour
         mainMenu.SetActive(false);
 
         Time.timeScale = 1;
+    }
+
+    public void MusicButtonClick(bool right)
+    {
+        if (right && MusicVolume < 10)
+        {
+            MusicVolume++;
+
+        }
+        else if (!right && MusicVolume > 0)
+        {
+            MusicVolume--;
+        }
+
+        MusicVolumeDisplay.text = "" + MusicVolume;
+        am.SetMusicVolumeScale(MusicVolume);
+        PlayerPrefs.SetFloat("MusicVolumeScale", MusicVolume / 10f);
+
+    }
+
+    public void EffectsButtonClick(bool right)
+    {
+        Debug.Log("effect button was clicked: " + right);
+        if (right && EffectsVolume < 10)
+        {
+            EffectsVolume++;
+
+        }
+        else if (!right && EffectsVolume > 0)
+        {
+            EffectsVolume--;
+        }
+
+
+        EffectsVolumeDisplay.text = "" + EffectsVolume;
+        am.SetEffectsVolumeScale(EffectsVolume);
+        PlayerPrefs.SetFloat("EffectsVolumeScale", EffectsVolume / 10f);
     }
 }
