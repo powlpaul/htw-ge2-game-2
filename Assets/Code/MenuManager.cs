@@ -289,7 +289,6 @@ public class MenuManager : MonoBehaviour
     {
         string activeScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(activeScene);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(activeScene));
 
         Time.timeScale = 1;
     }
