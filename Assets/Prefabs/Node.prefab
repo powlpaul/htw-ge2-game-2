@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 465644}
   - component: {fileID: 3367976}
-  - component: {fileID: 6569566}
   - component: {fileID: 2371668}
   m_Layer: 0
   m_Name: Node
@@ -40,20 +39,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197144}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6569566
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197144}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Mesh: {fileID: -6832102240348832921, guid: 9327fe7f89bdfc640ad3d48c6f3e3d30, type: 3}
 --- !u!23 &2371668
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 63dfaf3d6c2865e4f9e92c16212742ef, type: 2}
+  - {fileID: 2100000, guid: ade245ae090d0624ba44b3ef3500326c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
