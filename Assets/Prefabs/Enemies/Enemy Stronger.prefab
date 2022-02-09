@@ -63,8 +63,8 @@ MonoBehaviour:
   startSpeed: 10
   EnemyAfterDeath: {fileID: 0}
   speed: 10
-  startHealth: 300
-  worth: 50
+  startHealth: 280
+  worth: 20
   healthBar: {fileID: 114000010702059108}
 --- !u!114 &114000011600303422
 MonoBehaviour:
