@@ -21,7 +21,13 @@ public class Turret : MonoBehaviour {
 	private float fireCountdown = 0f;
 	
 	private int killCount = 0;
+	[Header("Materials")]
+	//[SerializeField] private Material baser
+	[SerializeField] private Material upgradeMaterial;
+	[SerializeField] private Material upgradeMaterial2;
+	[SerializeField] private Material upgradeMaterial3;
 
+	[SerializeField] private SkinnedMeshRenderer meshRenderer;
 	public LineRenderer lineRenderer;
 	//public ParticleSystem impactEffect;
 	//public Light impactLight;
@@ -165,6 +171,7 @@ public class Turret : MonoBehaviour {
 		this.fireRate = upgradePath[currentLevel].attackSpeed;
 		this.damage = upgradePath[currentLevel].damage;
 		if (!string.IsNullOrEmpty(upgradePath[currentLevel].name)) this.title = upgradePath[currentLevel].name;
+		ChangeMaterial();
 
 	}
 	public void UpgradeToSecondPath()
@@ -176,6 +183,17 @@ public class Turret : MonoBehaviour {
 		this.fireRate = upgradePath[currentLevel].attackSpeed;
 		this.damage = upgradePath[currentLevel].damage;
 		if (!string.IsNullOrEmpty(upgradePath[currentLevel].name)) this.title = upgradePath[currentLevel].name;
+		ChangeMaterial();
+
+	}
+	private void ChangeMaterial()
+    {
+		Material[] newMats = meshRenderer.materials;
+		if (currentLevel == 1) newMats[1] = upgradeMaterial;
+		if(currentLevel == 2)newMats[0] = upgradeMaterial2;
+		if (currentLevel == 3 || currentLevel == 4) newMats[1] = upgradeMaterial3;
+		meshRenderer.materials = newMats;
+
 
 	}
 	public void Sell()

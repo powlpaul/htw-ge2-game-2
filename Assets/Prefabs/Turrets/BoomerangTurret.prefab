@@ -212,6 +212,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 185070, guid: 957b8a8f7addb514e97a6cba831db8a4, type: 3}
   fireRate: 1
   damage: 50
+  upgradeMaterial: {fileID: 2100000, guid: ad890277c37fe9c4d972a234afd726e8, type: 2}
+  upgradeMaterial2: {fileID: 2100000, guid: 68c15b83454080e4bbc2578a33bbc395, type: 2}
+  upgradeMaterial3: {fileID: 2100000, guid: c4a11553206afe84fad3ccc9f004f540, type: 2}
+  meshRenderer: {fileID: 3710450241247162424}
   lineRenderer: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 454316}
@@ -343,5 +347,10 @@ GameObject:
 --- !u!4 &8172853878160202306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
+  m_PrefabInstance: {fileID: 8566257921448803753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3710450241247162424 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4206541390939140719, guid: 2c19db09d26594b40a7b9f89efe5c8f7, type: 3}
   m_PrefabInstance: {fileID: 8566257921448803753}
   m_PrefabAsset: {fileID: 0}
